@@ -1,0 +1,312 @@
+{
+  "kind": "spiral",
+  "deployed": false,
+  "clinical_validation": false,
+  "selected_stage": "fine_tuned",
+  "selection_metric": "validation log loss",
+  "preprocessing": "RGB nearest resize 128x128; divide by 127.5 then subtract 1",
+  "seed": 42,
+  "group_definition": "Filename prefix V<number>H or V<number>P; unverified subject-ID proxy",
+  "split_method": "Outer 4-fold StratifiedGroupKFold first fold; inner 3-fold first fold",
+  "train_count": 48,
+  "validation_count": 27,
+  "test_count": 27,
+  "groups": {
+    "train": [
+      "V02H",
+      "V02P",
+      "V03P",
+      "V04H",
+      "V05H",
+      "V05P",
+      "V07H",
+      "V08P",
+      "V09H",
+      "V10H",
+      "V10P",
+      "V11H",
+      "V12H",
+      "V13P"
+    ],
+    "validation": [
+      "V01H",
+      "V01P",
+      "V03H",
+      "V06H",
+      "V06P",
+      "V08H",
+      "V09P",
+      "V14P",
+      "V15P"
+    ],
+    "test": [
+      "V04P",
+      "V07P",
+      "V11P",
+      "V12P",
+      "V55H"
+    ]
+  },
+  "frozen_validation": {
+    "accuracy": 0.6666666666666666,
+    "balanced_accuracy": 0.6833333333333333,
+    "sensitivity": 0.5333333333333333,
+    "specificity": 0.8333333333333334,
+    "log_loss": 0.619785317562686,
+    "brier_score": 0.2181633859872818,
+    "roc_auc": 0.6777777777777777,
+    "confusion_matrix": [
+      [
+        10,
+        2
+      ],
+      [
+        7,
+        8
+      ]
+    ]
+  },
+  "fine_tuned_validation": {
+    "accuracy": 0.6296296296296297,
+    "balanced_accuracy": 0.6416666666666666,
+    "sensitivity": 0.5333333333333333,
+    "specificity": 0.75,
+    "log_loss": 0.6176080567508324,
+    "brier_score": 0.2158752828836441,
+    "roc_auc": 0.6777777777777778,
+    "confusion_matrix": [
+      [
+        9,
+        3
+      ],
+      [
+        7,
+        8
+      ]
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.7037037037037037,
+    "balanced_accuracy": 0.6916666666666667,
+    "sensitivity": 0.5833333333333334,
+    "specificity": 0.8,
+    "log_loss": 0.631003020428741,
+    "brier_score": 0.2284010499715805,
+    "roc_auc": 0.6555555555555556,
+    "confusion_matrix": [
+      [
+        12,
+        3
+      ],
+      [
+        5,
+        7
+      ]
+    ]
+  },
+  "history": {
+    "head": {
+      "loss": [
+        0.8543093800544739,
+        0.6651158332824707,
+        0.532815158367157,
+        0.6476020812988281,
+        0.6219770908355713,
+        0.6507658958435059,
+        0.4761691391468048,
+        0.4463684558868408,
+        0.4077400863170624,
+        0.4858209788799286,
+        0.3987993896007538,
+        0.5311505794525146,
+        0.44933971762657166,
+        0.3943771421909332,
+        0.34932902455329895,
+        0.3619314432144165,
+        0.3974749743938446,
+        0.46777811646461487
+      ],
+      "val_loss": [
+        0.724433958530426,
+        0.6966168284416199,
+        0.7006965279579163,
+        0.6954658031463623,
+        0.6809678077697754,
+        0.6633787751197815,
+        0.6415268182754517,
+        0.6340235471725464,
+        0.6275072693824768,
+        0.6371113657951355,
+        0.634540855884552,
+        0.6315602660179138,
+        0.6261516809463501,
+        0.6254603266716003,
+        0.6216040849685669,
+        0.6419563293457031,
+        0.6605091691017151,
+        0.64168381690979
+      ]
+    },
+    "fine_tuning": {
+      "loss": [
+        0.4350898265838623,
+        0.36009761691093445,
+        0.3060644865036011,
+        0.3060280382633209,
+        0.41827306151390076
+      ],
+      "val_loss": [
+        0.7655759453773499,
+        0.6194260716438293,
+        0.6318026781082153,
+        0.6374375820159912,
+        0.6690329313278198
+      ]
+    }
+  },
+  "source_backbone_sha256": "78d8d5065631e85dc237f3f8e5b05a6b6f8746bd5733e29b31d2d56a93483d4f",
+  "candidate_sha256": "0a02a7354163ff686c95281905c601c82a9c98f2c05f4ae57093de04dcbcb184",
+  "test_predictions": [
+    {
+      "path": "dataset/spiral_drawings/testing/healthy/V55HE12.png",
+      "label": 0,
+      "score": 0.2427823394536972
+    },
+    {
+      "path": "dataset/spiral_drawings/testing/healthy/V55HE13.png",
+      "label": 0,
+      "score": 0.37920597195625305
+    },
+    {
+      "path": "dataset/spiral_drawings/testing/healthy/V55HE14.png",
+      "label": 0,
+      "score": 0.227530837059021
+    },
+    {
+      "path": "dataset/spiral_drawings/testing/healthy/V55HE15.png",
+      "label": 0,
+      "score": 0.24052831530570984
+    },
+    {
+      "path": "dataset/spiral_drawings/testing/parkinson/V04PE01.png",
+      "label": 1,
+      "score": 0.9807299971580505
+    },
+    {
+      "path": "dataset/spiral_drawings/testing/parkinson/V07PE01.png",
+      "label": 1,
+      "score": 0.9814743995666504
+    },
+    {
+      "path": "dataset/spiral_drawings/testing/parkinson/V11PE03.png",
+      "label": 1,
+      "score": 0.5241035223007202
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE01.png",
+      "label": 0,
+      "score": 0.3157788813114166
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE02.png",
+      "label": 0,
+      "score": 0.40356239676475525
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE03.png",
+      "label": 0,
+      "score": 0.33541858196258545
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE04.png",
+      "label": 0,
+      "score": 0.496478408575058
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE05.png",
+      "label": 0,
+      "score": 0.6129491925239563
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE06.png",
+      "label": 0,
+      "score": 0.17266900837421417
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE07.png",
+      "label": 0,
+      "score": 0.1294001340866089
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE08.png",
+      "label": 0,
+      "score": 0.18994738161563873
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE09.png",
+      "label": 0,
+      "score": 0.49860724806785583
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE10.png",
+      "label": 0,
+      "score": 0.8137443661689758
+    },
+    {
+      "path": "dataset/spiral_drawings/training/healthy/V55HE11.png",
+      "label": 0,
+      "score": 0.6842576265335083
+    },
+    {
+      "path": "dataset/spiral_drawings/training/parkinson/V04PE02.png",
+      "label": 1,
+      "score": 0.9763826727867126
+    },
+    {
+      "path": "dataset/spiral_drawings/training/parkinson/V04PE03.png",
+      "label": 1,
+      "score": 0.9792892336845398
+    },
+    {
+      "path": "dataset/spiral_drawings/training/parkinson/V07PE02.png",
+      "label": 1,
+      "score": 0.9804837107658386
+    },
+    {
+      "path": "dataset/spiral_drawings/training/parkinson/V07PE03.png",
+      "label": 1,
+      "score": 0.9958824515342712
+    },
+    {
+      "path": "dataset/spiral_drawings/training/parkinson/V11PE01.png",
+      "label": 1,
+      "score": 0.275483638048172
+    },
+    {
+      "path": "dataset/spiral_drawings/training/parkinson/V11PE02.png",
+      "label": 1,
+      "score": 0.19055205583572388
+    },
+    {
+      "path": "dataset/spiral_drawings/training/parkinson/V12PE01.png",
+      "label": 1,
+      "score": 0.18256688117980957
+    },
+    {
+      "path": "dataset/spiral_drawings/training/parkinson/V12PE02.png",
+      "label": 1,
+      "score": 0.19999168813228607
+    },
+    {
+      "path": "dataset/spiral_drawings/training/parkinson/V12PE03.png",
+      "label": 1,
+      "score": 0.17621095478534698
+    }
+  ],
+  "limitations": [
+    "Small group holdout; wide uncertainty.",
+    "Filename grouping is not independently verified.",
+    "No prospective or external validation.",
+    "This candidate is not automatically used by the API."
+  ]
+}

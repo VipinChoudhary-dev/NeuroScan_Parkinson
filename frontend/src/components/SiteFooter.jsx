@@ -1,0 +1,5 @@
+import { Link } from 'react-router-dom';
+import { BrainCircuit, ArrowUpRight } from 'lucide-react';
+export default function SiteFooter() {
+  return <footer className="site-footer no-print"><div className="footer-top"><div><Link to="/" className="premium-brand"><span><BrainCircuit size={22} /></span>neuroscan<span className="brand-ai">/ AI</span></Link><p>More perspective.<br />More thoughtful research.</p></div><div className="footer-links"><span>EXPLORE</span><Link to="/assessment">Assessment</Link><Link to="/assistant">Medical assistant</Link><Link to="/clinical-context">Clinical context</Link></div><div className="footer-links"><span>UNDERSTAND</span><Link to="/evidence">Model evidence</Link><Link to="/about">About NeuroScan</Link><a href="/model-guide.md" download>Model guide <ArrowUpRight size={12} /></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} NeuroScan AI<span className="footer-credit">Made by Vipin Choudhary</span></span><p>For research and education. Results are not medical diagnoses.</p><Link to="/assistant#chat-privacy">AI & privacy</Link></div></footer>;
+}

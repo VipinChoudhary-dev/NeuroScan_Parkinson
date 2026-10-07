@@ -1,0 +1,51 @@
+{
+  "feature_version": "librosa-193-8khz-v2",
+  "feature_count": 193,
+  "source_files": 1134,
+  "unique_recordings": 567,
+  "duplicates_removed": 567,
+  "train_count": 453,
+  "test_count": 114,
+  "split": "Stratified 80/20 split of SHA-256-deduplicated recordings; random_state=42",
+  "limitations": "No subject identifiers are available. This is not a patient-independent or clinical validation.",
+  "accuracy": 0.9649122807017544,
+  "confusion_matrix": [
+    [
+      55,
+      3
+    ],
+    [
+      1,
+      55
+    ]
+  ],
+  "classification_report": {
+    "healthy": {
+      "precision": 0.9821428571428571,
+      "recall": 0.9482758620689655,
+      "f1-score": 0.9649122807017544,
+      "support": 58.0
+    },
+    "parkinson": {
+      "precision": 0.9482758620689655,
+      "recall": 0.9821428571428571,
+      "f1-score": 0.9649122807017544,
+      "support": 56.0
+    },
+    "accuracy": 0.9649122807017544,
+    "macro avg": {
+      "precision": 0.9652093596059113,
+      "recall": 0.9652093596059113,
+      "f1-score": 0.9649122807017544,
+      "support": 114.0
+    },
+    "weighted avg": {
+      "precision": 0.9655064385100683,
+      "recall": 0.9649122807017544,
+      "f1-score": 0.9649122807017544,
+      "support": 114.0
+    }
+  },
+  "model_sha256": "f734ef744b20701d900595340a13fa7377e9da8ae089e4d6f50a397b1261b767",
+  "scaler_sha256": "847bcb242be24864fc177f750c5efb5a7feec70026ed3ba0ed49a3adca384af1"
+}

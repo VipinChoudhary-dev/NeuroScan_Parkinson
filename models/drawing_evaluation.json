@@ -1,0 +1,42 @@
+{
+  "spiral": {
+    "artifact": "parkinsons_drawing_model.h5",
+    "sha256": "78d8d5065631e85dc237f3f8e5b05a6b6f8746bd5733e29b31d2d56a93483d4f",
+    "accuracy": 0.8,
+    "confusion_matrix": [
+      [
+        15,
+        0
+      ],
+      [
+        6,
+        9
+      ]
+    ],
+    "train_count": 72,
+    "test_count": 30,
+    "evaluated_on": "2026-10-07",
+    "split": "Supplied image split; overlapping filename-derived subject IDs",
+    "clinical_validation": false
+  },
+  "wave": {
+    "artifact": "parkinsons_wave_model.h5",
+    "sha256": "2ae8a98580156e553934caccd3c7b0ae5b3fde8b73573d0fd9484af53515bce7",
+    "accuracy": 0.8,
+    "confusion_matrix": [
+      [
+        13,
+        2
+      ],
+      [
+        4,
+        11
+      ]
+    ],
+    "train_count": 72,
+    "test_count": 30,
+    "evaluated_on": "2026-10-07",
+    "split": "Supplied image split; overlapping filename-derived subject IDs",
+    "clinical_validation": false
+  }
+}

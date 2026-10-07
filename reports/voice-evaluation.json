@@ -1,0 +1,3118 @@
+{
+  "feature_version": "librosa-193-8khz-v2",
+  "feature_count": 193,
+  "source_files": 1134,
+  "unique_recordings": 567,
+  "duplicates_removed": 567,
+  "train_count": 453,
+  "test_count": 114,
+  "split": "Stratified 80/20 split of SHA-256-deduplicated recordings; random_state=42",
+  "limitations": "No subject identifiers are available. This is not a patient-independent or clinical validation.",
+  "accuracy": 0.9649122807017544,
+  "confusion_matrix": [
+    [
+      55,
+      3
+    ],
+    [
+      1,
+      55
+    ]
+  ],
+  "classification_report": {
+    "healthy": {
+      "precision": 0.9821428571428571,
+      "recall": 0.9482758620689655,
+      "f1-score": 0.9649122807017544,
+      "support": 58.0
+    },
+    "parkinson": {
+      "precision": 0.9482758620689655,
+      "recall": 0.9821428571428571,
+      "f1-score": 0.9649122807017544,
+      "support": 56.0
+    },
+    "accuracy": 0.9649122807017544,
+    "macro avg": {
+      "precision": 0.9652093596059113,
+      "recall": 0.9652093596059113,
+      "f1-score": 0.9649122807017544,
+      "support": 114.0
+    },
+    "weighted avg": {
+      "precision": 0.9655064385100683,
+      "recall": 0.9649122807017544,
+      "f1-score": 0.9649122807017544,
+      "support": 114.0
+    }
+  },
+  "train": [
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_033.wav",
+      "label": 1,
+      "sha256": "b6491dc0e4ba45d0f75459aa3d61aa8dd7ed6499b8320980fe56723ee231d4aa"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_064.wav",
+      "label": 0,
+      "sha256": "3110f0342c61d30d212d3203c0ef16da74d5480b2368c169978ab377823c3700"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_152.wav",
+      "label": 0,
+      "sha256": "419815820ff6e76cf82984a99f3f743277f194496f8e868c1132d9d4ebddbb11"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_131.wav",
+      "label": 1,
+      "sha256": "adfb81c68d89a05bd80348a030140006c5f6b3f0ad7988341f774902a2f8d582"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_063.wav",
+      "label": 0,
+      "sha256": "1109c0645b79d3c50fc35bff5167ed9e8025d7aad6276947e0966cf00abe5052"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_058.wav",
+      "label": 1,
+      "sha256": "42707769ad38306bb4b63108383e5a162ee172082e8b0f0c515a2e63ccbab2cf"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_139.wav",
+      "label": 1,
+      "sha256": "1a22fc7be7f4e20a726b46748590f0dcdc7ad560e95702416f218aecb36c0392"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_117.wav",
+      "label": 0,
+      "sha256": "0dd3f5a4693efb997fa734c48cbce555ec59a664ee7b24754dc82c0eb110570c"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_223.wav",
+      "label": 0,
+      "sha256": "3d512f06bd76587e359ae0b097c68a55cb611ce0ee2a133d3e771e4a050f182a"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_015.wav",
+      "label": 1,
+      "sha256": "9eb8ecb11a228273eb8d6823ea869ed43d5f4e804060b3990455bd1457b53545"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_036.wav",
+      "label": 0,
+      "sha256": "5aa5614aa2cd4c0c98d280fa734eed88bf7ff22ccc21f9f6532d096a375f0b8e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_147.wav",
+      "label": 0,
+      "sha256": "8ceb4331ee29f2b34b9df6f6b9c382238532802cb48cf6e0ba4059cdb1de445d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_138.wav",
+      "label": 0,
+      "sha256": "7d2b81cfd483870b0c4fa3b48814a6dfae78b8944d5c61fb63e78c316b6ff7a3"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_278.wav",
+      "label": 0,
+      "sha256": "92af6937316920ed1873caa5eda99b2fb972950072c380d7965c3d4775a002b4"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_285.wav",
+      "label": 0,
+      "sha256": "d7dfb113913053fd52997889b1cd576505f445f5fa8f071993b5fd79062323b2"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_095.wav",
+      "label": 0,
+      "sha256": "745e234b650b96e943a83e10923600e9361be81a06d4d4c4e457d79838e0b618"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_141.wav",
+      "label": 0,
+      "sha256": "fbde84e4ed33eb90b132a4eb49a52dec5405b5f2519e182695772aecebb1116d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_136.wav",
+      "label": 0,
+      "sha256": "3c28a2a0bed686edfa00adf217a9450663fd3495d0e681b0b632a1c1328ac79b"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_113.wav",
+      "label": 1,
+      "sha256": "34530ab9a7a4e110d5746781b74547c4951316f8934578494f2ced62da7d3198"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_153.wav",
+      "label": 1,
+      "sha256": "5a765c7de638a59e8ecc6b1c0b2fd450d41dea22fcebc56bbdfe704957b1769c"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_025.wav",
+      "label": 0,
+      "sha256": "32fc25ff54bd94e78a6a5c02abc884a8365e64fcd9c6798e569ce4d0102d5352"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_248.wav",
+      "label": 0,
+      "sha256": "7909e87bf1677073c8fae40b02d4db226c7e458ba242ad35ffdc9ba76d741a14"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_120.wav",
+      "label": 1,
+      "sha256": "ff6b8cade1c7d6f3a1b0a6a01c48c9cabf323417c411e6764738802985918337"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_276.wav",
+      "label": 0,
+      "sha256": "f05f9d9888b7d4d90b51e1a0ea2b3e398134dad3328cb169499effaedb704d0f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_030.wav",
+      "label": 1,
+      "sha256": "b0739290eefbf8005ae5788fb98e6a5ee7f26fa5c763040b153715f887913469"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_152.wav",
+      "label": 1,
+      "sha256": "dbf37504bb2d66d95bfb262e2f5ba0a5da1f9fe02edab3267c4bd95b0eff408a"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_167.wav",
+      "label": 1,
+      "sha256": "7e2f0e7a6fa56efd713b9e5a2556a5447dfd12b8bade1cbf49e488873306ca0c"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_200.wav",
+      "label": 0,
+      "sha256": "8ea880d61de5f2931d0f36a31dfec6b20a17f82011b957d3bd125eda7b25902d"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_182.wav",
+      "label": 1,
+      "sha256": "25f572eaea116d7783dbd84ac0212d04fa62962e649bace3fad0dd7d9556b1ce"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_053.wav",
+      "label": 1,
+      "sha256": "9db61aa31f2ef9a49d048f1ed737b4bdef7500242032485e211f28135f853cec"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_031.wav",
+      "label": 0,
+      "sha256": "69b6bee88c191d5454da9a2701fffba53ec1bc158d5353762630548595639b11"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_244.wav",
+      "label": 0,
+      "sha256": "ecfeb4eeb2d145b055b95ae7ac10645f9a2bf7ffbf0c0905f4954402766a1333"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_044.wav",
+      "label": 0,
+      "sha256": "997969bab52558c71f14451a51caaa468ec27660f837193dc6c1b64ecb778499"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_020.wav",
+      "label": 1,
+      "sha256": "447a2c9d4bb970a6c90c62a3885e18e1d59b917ebd1ebfe1bc74ee04673ca018"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_260.wav",
+      "label": 0,
+      "sha256": "40cfbf7fa3fc404619da45f996e5cb7c6b3b45a11faee1b68a826ed5cdf11a9a"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_007.wav",
+      "label": 1,
+      "sha256": "8572841deaf43a2a85ff59dd9e49a530f241533e96ab2b40d8be79ae50e0352b"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_122.wav",
+      "label": 1,
+      "sha256": "88c2efd3d35ae0193e541969d30cf42e81ab346d086c1ba69b53923dc1f12d45"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_203.wav",
+      "label": 1,
+      "sha256": "a29690a33e4a0c1eec55fa0be2f113efac889d02211201d764b7132deb3288b0"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_170.wav",
+      "label": 1,
+      "sha256": "b7e450c8f96063fa359dfaefe3509fcf04ecc52388ec08df1ddb13a9756efa4c"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_213.wav",
+      "label": 1,
+      "sha256": "944999872b25c1a71ea694ed57f9e20f141fcdc30ee99a3a47f9308361239296"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_233.wav",
+      "label": 1,
+      "sha256": "2816c8580a1305560231b43cc4a0942fd8cc893bf675cce89aa9d0492e18bab4"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_013.wav",
+      "label": 1,
+      "sha256": "095f3acbb1452d1bf0fd09b43cbffd420d83d383d321512fce51cc66ae286cfe"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_270.wav",
+      "label": 1,
+      "sha256": "dfe76a5383e4cf05bf8e9af715beb66d3565588a60d89a820c280004676bf9c0"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_274.wav",
+      "label": 1,
+      "sha256": "ef842c6e7a48f362a1ab4e09ad2602cb2afe215482918d557e4f8883c087726b"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_118.wav",
+      "label": 1,
+      "sha256": "19b36290d7db23e2810a95a1181752f9d725cfd1bd1d16a450ef6f1d32c3be1b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_283.wav",
+      "label": 0,
+      "sha256": "7507a0dc73244fd8659a97f8e30614828603491de96c8758770d54b68088000d"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_230.wav",
+      "label": 1,
+      "sha256": "66bf7ac88e1aac189859b594b478d4a0c7fea57e546931fa28c0ea74a75754d8"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_133.wav",
+      "label": 1,
+      "sha256": "17855fe88fc885f57c76d013fd4c28f84fa57e50b6455e16321af0450aa9e6ed"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_074.wav",
+      "label": 0,
+      "sha256": "6d42ef19891304bbcece04e5be44d698b25581b174e3d82370be4df9e39baa5f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_236.wav",
+      "label": 1,
+      "sha256": "a6f414782f1273cf1093d790b641f5c24af39b05174786aaad1c421a58b81247"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_126.wav",
+      "label": 0,
+      "sha256": "26f800aff4ade1d1acf94c99b023c86701d0b5d92e3a2282deae0fc44d925914"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_083.wav",
+      "label": 1,
+      "sha256": "2ff62aa8e80f8bb6e424343ecb9935ccb47abe36d2d27e3010d437ee6ab063b5"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_250.wav",
+      "label": 1,
+      "sha256": "5edaf9685b9ecf005d3f115c6a8ce48e68cec108153a351b616bd92d35f32965"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_139.wav",
+      "label": 0,
+      "sha256": "fcc28328ad5200f028a85552a3f7b2e8d53d775b18658aa9b75fa304b6dd9894"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_162.wav",
+      "label": 1,
+      "sha256": "6493bf91e42176fcd103623158026093e843ee870ef3e05acd6b8f28b7667c9a"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_255.wav",
+      "label": 0,
+      "sha256": "4ed971ebea154d2df2be6bb725fa0ee71682ddc32fc3edbff7a0b8e1041d2d89"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_004.wav",
+      "label": 0,
+      "sha256": "bb044b948387dbd525a56f25ef2159fde23e0e71a509bb7f5423b5133cfd873f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_189.wav",
+      "label": 1,
+      "sha256": "74115728d1dce3505340a5625b3f8824a19ee6f3b553484a61ac474bd20ebe43"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_092.wav",
+      "label": 0,
+      "sha256": "d55376fc55ee51adf3e06f552be18a4fa3c2368f7d5a2715050d55e157ca5fd5"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_056.wav",
+      "label": 1,
+      "sha256": "67a0e868b0b7e7b5bfa6521bcd544072ebc4acbf7eb6494ff636a4f7b629de53"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_268.wav",
+      "label": 0,
+      "sha256": "e6607bb60bfa35eb93132405a82dae3e1f76d13c0cfa3c3390217ad7aee027e9"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_099.wav",
+      "label": 1,
+      "sha256": "147a542a1fa5e3acd4ec9c2f04d4a927aee43b4763c9755342333dcbf5448124"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_175.wav",
+      "label": 0,
+      "sha256": "077b803d8c8d9364256ed6e58fbbb7bf47a9d62c94a41fa6bd80268e13f52ac5"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_182.wav",
+      "label": 0,
+      "sha256": "15d03f7f033e5bc5199c200a0543f5858b831fedaf5faaa682859bea2e2dd04b"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_145.wav",
+      "label": 1,
+      "sha256": "878f4a3f0330b26f4dd3dfaa482abacba43e422af88b3a82b8c29bd43be3afb1"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_107.wav",
+      "label": 1,
+      "sha256": "4a17a6a31ab80ba13a034ff536cd10a83e97b40f4d78047c29ec742967b9e327"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_282.wav",
+      "label": 0,
+      "sha256": "146b73badbe42e5d0e761003cb30bbe8a906f3b8bddc267bc98567d9c50e5011"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_264.wav",
+      "label": 0,
+      "sha256": "a38740feb428550a9be25822778edac005af7bd485626781ff8959c1ed5c4447"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_211.wav",
+      "label": 0,
+      "sha256": "da8c1886b18c857549018b390e919636cefd0b69e2238e418275aefacce4c21a"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_057.wav",
+      "label": 0,
+      "sha256": "60d4ebef1c8f0ac66ae7a30eeef31c849420879df895414beacbc1b24028c19c"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_112.wav",
+      "label": 0,
+      "sha256": "90beb39cedb42470dd1313bd33cf7c26d9e9fefb37176f8f423be9b6deb84b81"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_103.wav",
+      "label": 1,
+      "sha256": "b56687431ead6b8b224b8dfd63656b5da91ab6db9adbf4164994cf22a17a2c2e"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_143.wav",
+      "label": 1,
+      "sha256": "c7eb97df467372dc6757bac5a327482a2b5ef2f137ebd2eeac32774469064496"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_006.wav",
+      "label": 0,
+      "sha256": "540e551a310d39cb9daec91d759342b67ef3fc984ccca51b2b4ed8fcde36741b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_155.wav",
+      "label": 0,
+      "sha256": "b03f9c28bcbba1b4238be68dc7e4ef520da71332ad46bab03439d0ae6db5beb6"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_067.wav",
+      "label": 0,
+      "sha256": "d136a73dea245ec920fee818f79d895a6949d8fa6b00bc2a23590c1c9a4f5f40"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_219.wav",
+      "label": 0,
+      "sha256": "9f00eaa6c2f1bbd3e346aa9e0538fd00e6457dbddebab877f37bfea495b3a548"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_278.wav",
+      "label": 1,
+      "sha256": "bb4c5f164147e6edc24cd957d01b8c052b58c6c6de9a501c4612864ee8eb68c9"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_213.wav",
+      "label": 0,
+      "sha256": "566ae52b1af0f6510ad6652dd31fa52ef21799c32836d8bd920361687ed3a624"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_040.wav",
+      "label": 0,
+      "sha256": "c087cdce3168d4477985a4c21b67244594c0e414dd401acfef660144bcf35095"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_115.wav",
+      "label": 0,
+      "sha256": "5ba5e0f75f641abf191af588481f7956e933797a9ad1c681f8793be01dc0fb96"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_156.wav",
+      "label": 0,
+      "sha256": "744dcb2a2f41cc3fdf221548fa4333eeb887558c013bdb3dc5cc760638ec911d"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_006.wav",
+      "label": 1,
+      "sha256": "dc9fc65c1741794679de7c824db87d34fc78c29232fae3ed6bb87b07d3ab56eb"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_002.wav",
+      "label": 1,
+      "sha256": "a654fb993da5e313b0d537dba1dfda0a24bc696c9513c022d38148d7d438d2a1"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_173.wav",
+      "label": 0,
+      "sha256": "fe28fbdca90ad1ecb79a0b5209bd5a9d875467864c0f20ed7f071f031f33b7c0"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_150.wav",
+      "label": 0,
+      "sha256": "b4b54f1df9b26205cb0141d5ea95b080f67029652835071f2d8bf23cabfcc973"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_193.wav",
+      "label": 0,
+      "sha256": "efdc6b30800aa8469b0e478d26a22c80438de5099b0ead5b7cd61863c4b6ebdf"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_107.wav",
+      "label": 0,
+      "sha256": "f3ef08e4a98becf7b6982bf4a65080e9bb3866194b80ee6d1d37c02adbdf772d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_140.wav",
+      "label": 0,
+      "sha256": "061a25adaa48ae2d2745ae4e85bd333af18d9e10eea93b2aebb3e28becad8b37"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_120.wav",
+      "label": 0,
+      "sha256": "980fd0724194386390507c3ab5a628211d7b42de234b2db71a84e5d1d321a91f"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_275.wav",
+      "label": 0,
+      "sha256": "fd223dc5286f34320e2fbb3c731ba8a2237f7509dfbcef8d3b55d1296b5c27e1"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_105.wav",
+      "label": 0,
+      "sha256": "a6ecc15fe25f94f5b97681eec12cd287a3256f851cf51439039a06b914bfbe5c"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_057.wav",
+      "label": 1,
+      "sha256": "89f3b5255fdb1a2a6ce580fd7589e0a8bccfcf58cf7c0b85f13b97a844cf0147"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_272.wav",
+      "label": 1,
+      "sha256": "6b495771f595c2693d413850c98deaadbbeba5c31a5abb3deeb7871420186130"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_169.wav",
+      "label": 1,
+      "sha256": "8caff8f00bfa91aa708f69a93563adee3042be1eaca12ce074185f0d6a9b29e8"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_163.wav",
+      "label": 1,
+      "sha256": "000da22f372a7b482c76cb0cd3a0848e4b9a1c1817966691d007764ed39c2e61"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_165.wav",
+      "label": 0,
+      "sha256": "623cfa90265af7cd9216f3cad6ea4a2a1a837c0ab038aa7e3c22ffe5e61a82c1"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_088.wav",
+      "label": 1,
+      "sha256": "9559c7b830b4c4b92dce68050b842cb65d9c736514d00ee99a5b44fb5c4b2221"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_279.wav",
+      "label": 1,
+      "sha256": "87b78e55db74454e2df46296ad82de6e734c1cf862a28d442b06a3b84962f1f2"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_205.wav",
+      "label": 1,
+      "sha256": "316552a2f1f12427a46022f5c6c845792d53258fdfa3a75923b591c920b1e1ca"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_221.wav",
+      "label": 0,
+      "sha256": "9622945d1fe6fbba03906614eea1c72dd4f34534d7e6fb4fe25e97e6b1dd4204"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_247.wav",
+      "label": 0,
+      "sha256": "595dbfe0c6f0892869a003075f55a917be093b218a7bc02925f7f297298f6100"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_258.wav",
+      "label": 0,
+      "sha256": "da920a39de9aab8a2d095a71481ae01feb758358a42f06a1eb429ea7fc31ed73"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_001.wav",
+      "label": 1,
+      "sha256": "1c02fecb1d07773287c7908ef7444401cd2484d39514a2089f46041461187223"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_015.wav",
+      "label": 0,
+      "sha256": "6c1264038f69f5fbbf339fbea54c496b0c4ac0770bdabc514fb821c3f33fa93b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_168.wav",
+      "label": 0,
+      "sha256": "ff0ad29e6e08a63bce4b941ec3b0944d33aca6ad7646d2d5e130e3fb1df44cad"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_233.wav",
+      "label": 0,
+      "sha256": "aa130285bf3fc546a0f37ad878c1f88ab9a2c94c4086c40df4672c35090987ae"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_143.wav",
+      "label": 0,
+      "sha256": "e704646cad562a5e28f7b3427e2f2139ab6e3f15ce1c0541795d20ce1a45d7b0"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_096.wav",
+      "label": 0,
+      "sha256": "16912094f5c1d84a01a3b10ad32df63eadd67c4bcb9de10ef071cb92db80378f"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_062.wav",
+      "label": 0,
+      "sha256": "d517d606cca0ee0c5bd56e5c94231b45a362d45098aee54742070f41804ffd3f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_095.wav",
+      "label": 1,
+      "sha256": "377eb9099367a4412e3f0c30803450a1eac91be3d18c5c68cfa77cda6b486a9e"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_198.wav",
+      "label": 1,
+      "sha256": "1df499174a7149a78462a35c1c042e0d03fde824b679d26ad27a28ea067a05cd"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_222.wav",
+      "label": 0,
+      "sha256": "d698fb6b28e0a74070cc829c2a193f06c674ece0ed1ddb17b2fe5be7c7b14926"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_243.wav",
+      "label": 1,
+      "sha256": "0f0b25396126c001a7575cae9054a16f0c272e51ef83a952ecc85b4959b10ea3"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_199.wav",
+      "label": 0,
+      "sha256": "6723a08d5ed24eaade95bcc16e681b131b5373cf511dee4061be674e244f1994"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_193.wav",
+      "label": 1,
+      "sha256": "4e162e65546be3dde6204eddbf222422ed9f91941f9af8af12fd7e88e850f76e"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_041.wav",
+      "label": 1,
+      "sha256": "f92f822fb63320dfad91c2685a1573992ef34ca782000126bae721fb1b98d00c"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_014.wav",
+      "label": 0,
+      "sha256": "dfebee513e21edda046a8ead51873eaf4bef99cb33eb67d22ea75ffb84314249"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_195.wav",
+      "label": 0,
+      "sha256": "f5b0f18f871dcde0366985687b1ca3d5c38469dfc0a9c9b8401db665c08dbe4c"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_273.wav",
+      "label": 0,
+      "sha256": "3fbd975acd8309a934364be7081681be1f06b04fa8295023144c6d40cbe636f5"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_218.wav",
+      "label": 1,
+      "sha256": "7d9924a963a78e617daf5715c313c38ad924130ea19058bbec8eded25dd9c2df"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_119.wav",
+      "label": 0,
+      "sha256": "a06e44d6feafe7301cf7eee4246c07b95ed8dcf8400b49f51cfbe0553042020d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_249.wav",
+      "label": 0,
+      "sha256": "9e7fd1e4907883b30f56b47f702b6b6e93901e9d2e1557ec4b47f18a27f3f4b4"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_005.wav",
+      "label": 0,
+      "sha256": "3f007809eec6447ab8c56a526878fd3e592562162aeb483b5616a717ecac2996"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_000.wav",
+      "label": 1,
+      "sha256": "4612464415b75b74dbbe713beeced3d699151481ce9f514b4a569ef0173ffd96"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_231.wav",
+      "label": 1,
+      "sha256": "46f8e49f0ad46ae18f65e469fdd5626d37b578cf739b6aead4e33b27fb803625"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_035.wav",
+      "label": 1,
+      "sha256": "2b897edf3a26cf682dd490e97da0907de28b7bfe87e7460bbe17780fd77771bc"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_038.wav",
+      "label": 1,
+      "sha256": "f74a737099f40b03433f28795138d124155b3fa8fb7b3a8b42b764ce76088c0d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_254.wav",
+      "label": 0,
+      "sha256": "4d3a25abe93eb2275a915f15fb072ace46c244eb9c0290ebf9c062edf1a54bcb"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_074.wav",
+      "label": 1,
+      "sha256": "af76886fa658a401d58a166bb928ba195848c7d4f19df18ba5ed5cc2e09b13d4"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_123.wav",
+      "label": 0,
+      "sha256": "3ca0fafb1a56c88a7904b8d23838f766b59e4fce227ea9569666b736e7a6bc81"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_144.wav",
+      "label": 0,
+      "sha256": "5976a5d9e83504805a17aeade8842118d06d697b0fabb5c57abf2c303dba5dfe"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_097.wav",
+      "label": 1,
+      "sha256": "03795230d50feae0e845e21c86b18cc08661d06b2d46f8749a669e4a387296c3"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_208.wav",
+      "label": 1,
+      "sha256": "c28f39afed2025f8acdf128a59e63097adb71944aefcf36409d5d82760298585"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_111.wav",
+      "label": 1,
+      "sha256": "b545086ad1d586a49dbc2b8071111d3c8d05fb0178b1c8372a148ba5078465ef"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_144.wav",
+      "label": 1,
+      "sha256": "02ced0400625458171d9592e209adb90c131702393e11e6ef06ae88e480d6d52"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_271.wav",
+      "label": 1,
+      "sha256": "25ebd81997ba5aeba8344c2e32f88da2349c265f8bde6a341f9994cfc8b3ad02"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_127.wav",
+      "label": 0,
+      "sha256": "4a15bf208a2e1783868100d7e9ed29968cb93b6e440492df6acb07fae1e88634"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_106.wav",
+      "label": 1,
+      "sha256": "c255e44f2266a3fda7434b94f56525a18de30123cb2a19676016704649f8939c"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_084.wav",
+      "label": 1,
+      "sha256": "195d73f8e2c94ecde0f391ba652373e7dbd0cf7e746f73d1852c2a19b20f54df"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_049.wav",
+      "label": 1,
+      "sha256": "d4266284ad90657b468f68ec73d66b22a99c594e776607931e8f1b66a3b464ec"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_196.wav",
+      "label": 0,
+      "sha256": "6f40bbc324ccb3f4a8d3f2890cf6d7344316334b98d1be45944e4dc40e5b957f"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_159.wav",
+      "label": 0,
+      "sha256": "05d1fee692e639650495740040a5663bbaed96e3791fb58811e02ab186cf040e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_026.wav",
+      "label": 0,
+      "sha256": "d843c18294e19cd6fd8df51f391ec6f54a972d7f6c5f58fb5bf623bee09d0fbd"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_082.wav",
+      "label": 1,
+      "sha256": "9bdb717c5e4becf836e36cad32391b7fbab40cdd5133b0c56bbed49021d59c00"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_279.wav",
+      "label": 0,
+      "sha256": "cc9ca9bb1f3b97ce0fec7ab9eb16bc01352dabbd238dbdfd4b9df803d3311e9e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_070.wav",
+      "label": 0,
+      "sha256": "20952666ca073735342b3f57649049c656668ed9a5adc079e5f2df9ce3936a35"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_011.wav",
+      "label": 0,
+      "sha256": "170762a039db7877d3b2b2fdb2136ad634f3e530511a53ee1b50f0b111c44573"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_082.wav",
+      "label": 0,
+      "sha256": "94b496c0fab634cf8acaa8cb89c74750b307c9aa6d6715785851ee5423daa624"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_135.wav",
+      "label": 0,
+      "sha256": "1e07dc6c91ecc46f0c0d15a3b97ac931d6463a19a48f448b335cc24ab6c52f76"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_043.wav",
+      "label": 0,
+      "sha256": "9e6e8999fc336de187a18b6ef140d9ca51ca36effb51325c439446252a2b4289"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_065.wav",
+      "label": 1,
+      "sha256": "111c8c3aaa6e37c29ce6be3cb626a111fe2b3f030ec0bdbb0b192c84dc13a49b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_176.wav",
+      "label": 0,
+      "sha256": "68b1fe69be272c09023026bd95aa5578423961a38f501ced563b9ead03257b6f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_078.wav",
+      "label": 1,
+      "sha256": "1320262b1418ad1f061d569b029afd2be2540d7bd9b71b9bb5b5f0bb041e61cf"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_224.wav",
+      "label": 0,
+      "sha256": "3e1708d874517a3c30d8ab2e7c2da8ee98e98c3d53d959ac3997bc946c58753b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_038.wav",
+      "label": 0,
+      "sha256": "7d850c68b61c202bbbb138400537cba05b2553966f8d97c9017bb1f630d0d268"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_077.wav",
+      "label": 0,
+      "sha256": "04a270157b71f480a657cc77061318a9978a5a90280840f9ab5bb5c706092a36"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_125.wav",
+      "label": 0,
+      "sha256": "5a8af5d493e627d99ba964a9363330df56bf5ed6cdafcb85e77c46b5ee449425"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_101.wav",
+      "label": 1,
+      "sha256": "57c4d487be1a43e89bfdebb1560183c998f041790188e08a72a8235ad3de7755"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_108.wav",
+      "label": 0,
+      "sha256": "067b541a39fcc11be7ceff1e02027a8df234f7eb75ee08772f0fde6d19eb80b1"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_016.wav",
+      "label": 0,
+      "sha256": "81fdcba4b4d37eb6dc72ef58f2f62bb54f0a4b6c5c06d0870023e6d481fc82a3"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_138.wav",
+      "label": 1,
+      "sha256": "48c227475b5b8e5841d16ec0e98d52ae463b64d458e16295c2a2378203efb0ee"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_184.wav",
+      "label": 0,
+      "sha256": "3c14ca675f193725ce0d0da1f18c7c79cf8291d9a05d098ef6425434a1e14342"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_080.wav",
+      "label": 1,
+      "sha256": "37e3a3282b5b1a36eab6965cc91e800d8f105ae677cb3d447a5ed90c6eab8219"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_264.wav",
+      "label": 1,
+      "sha256": "5ad33fdea205db0f2fb112784711fddfd1b14226614a92f5945c0e4476a4a2c7"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_132.wav",
+      "label": 1,
+      "sha256": "adbf2969ae94152f14f1b4f550e3a3685f8a51650e6b3a77567d88fc36aeced3"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_110.wav",
+      "label": 1,
+      "sha256": "532049283eb22848d68ea9c43d22314c90ce78c46d5fb8c7a3826eab3dbb15cc"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_028.wav",
+      "label": 1,
+      "sha256": "562175e5c6866c47f2a2f605d05546e77b3bfae9b21efca6e0ae3deeac8cee34"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_039.wav",
+      "label": 1,
+      "sha256": "d15331d9e48c801f5f4e94e7878094a7020bdc2e6a970c8e2d7baba2b6b9c83a"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_104.wav",
+      "label": 1,
+      "sha256": "28a9946ea666e522ff60cd1de9aed9a9e0cbaaa4e67db06fa97b10b98443c08d"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_247.wav",
+      "label": 1,
+      "sha256": "0dbfa634ce4d95b2c38a21362cbe5f388e8e9914bb27dc911a2d1ab986614bca"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_156.wav",
+      "label": 1,
+      "sha256": "dd13915f1be97748249885047760b8662d7eae4661a8bea29cab516fc9fd79e3"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_056.wav",
+      "label": 0,
+      "sha256": "791dccb9455dbcd9f3479ca1c0af352aca72a34529d70b945189acde599b1e05"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_046.wav",
+      "label": 1,
+      "sha256": "bc3785fec2a777ae1956b78fe7db84b69d6378c89550e9eddec7c939f5e91bf2"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_265.wav",
+      "label": 1,
+      "sha256": "af6321dfbbe6fc877009b100a7bc2f5afeaa401cd4954283df01f16596daed79"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_116.wav",
+      "label": 0,
+      "sha256": "202b98528c343f7865dda117add1127f4396894f9810223e6e6e818872ccd8ac"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_258.wav",
+      "label": 1,
+      "sha256": "414a95c96df5084c5f24dace34595adb262ba760d2fe83ef482cd11b3ca2445a"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_237.wav",
+      "label": 0,
+      "sha256": "40bb72651364c0a96f15705ff3986b96f54ecb41082afdd52327e1869f67f937"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_068.wav",
+      "label": 1,
+      "sha256": "f7b1dda1a9ef49b3d57b276c93f332ef6115c3fc9c30a9a0a10360a129991eb8"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_217.wav",
+      "label": 0,
+      "sha256": "2835c06cfcc64b4f5567cabcde7762690a00daeaf4ad9e9d87775ac666ebf795"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_052.wav",
+      "label": 1,
+      "sha256": "63123bfd0bc35e408544b166a5f046343eaa21a94c651d8d70e7f7a09cfe71c8"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_132.wav",
+      "label": 0,
+      "sha256": "5a224c2d7a10b5b44d7644af1d0857f5a6e127c3abab71af67cdfd59c7971b3a"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_223.wav",
+      "label": 1,
+      "sha256": "5f92047db88df2f5841e806c1d53b773488b2103d342adfcec2f3fcc0a912bf7"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_117.wav",
+      "label": 1,
+      "sha256": "d0881f18f7f7840d169ffabf33a691f29d74fbce0b11c8b709b574e44b5fe7a9"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_227.wav",
+      "label": 0,
+      "sha256": "38e1b71d59862bb1225b3386c5880d9feeae6e8f2697b491fac5994765012b71"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_041.wav",
+      "label": 0,
+      "sha256": "7cf7343a01f2539ba515712481d17cdb31d856487ef23bf4441f34eecfbb8ce8"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_167.wav",
+      "label": 0,
+      "sha256": "3aeaf20bcc97403c7e17c45278d00fae99bc2c155971a26019c6205f5b2a8a33"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_126.wav",
+      "label": 1,
+      "sha256": "7a42b2644e9bbd5da21503a05d33e60880583d3daf182da8e3ddc1843ed426ff"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_130.wav",
+      "label": 1,
+      "sha256": "051f167f5462d09141ad70ad91e166022aa5719ab0553ede4615cdb7c03cc7ea"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_029.wav",
+      "label": 1,
+      "sha256": "7667829d9fed8e985d04dc259f0e3fc3cc08c4daf47809c9f338a43c758dfda6"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_078.wav",
+      "label": 0,
+      "sha256": "801bcb1f99a684c5a0f54c2a45c1dfe7b790a2db21e91941264e96a71c7b7e1d"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_275.wav",
+      "label": 1,
+      "sha256": "52620e554679508137cdce05e003cfa8eb6229d3337985966a061dfa58ea1188"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_209.wav",
+      "label": 1,
+      "sha256": "97916b24bf0f5c42c5e681f77fb8d7ea443ab8ddb525bbb89d11b6c9b7af3ed7"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_257.wav",
+      "label": 1,
+      "sha256": "65680bae60be730008b507cb44aab652523312064ee4d3dda92a03f721cc20d3"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_238.wav",
+      "label": 1,
+      "sha256": "24d3f002deccc9e6bdfea2bdc76ad2bb0497935755a4b7e043673b6e84bae81d"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_234.wav",
+      "label": 1,
+      "sha256": "7ec656c02309ae49baeb9667c0f1bcfb9e0c47485ec0174454aed1f16b2ad7d6"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_137.wav",
+      "label": 1,
+      "sha256": "9335f3045b64af4679684e02926ca075e9d132c0d5b1a7e40c574868e36e096a"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_183.wav",
+      "label": 0,
+      "sha256": "985b8d1de8acfd403266ee9d193bb7e4b613c038407e3f9997d0361adc823213"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_165.wav",
+      "label": 1,
+      "sha256": "545253b341757ae0ffe781f51111141f5ba591174e1a4ac9122e69ecb62f4ecd"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_180.wav",
+      "label": 0,
+      "sha256": "9c0f2ca9ffb1f4d089a476f230c3279cfe6929c3a3b96460812b2f57fcdb5510"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_069.wav",
+      "label": 0,
+      "sha256": "24b49c5b83ff0be4fe60404cd316160754ea1bad696bc63e500f9efbd6b2c441"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_022.wav",
+      "label": 0,
+      "sha256": "c97c6e24eff9a189b99112dbdc31158a4357ae800162a4fe88b5cb7480936372"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_018.wav",
+      "label": 1,
+      "sha256": "1b1d240a04507f05d26e45b023d07c4b0ef360ad1eff845ff3777a6f17a9ebbc"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_149.wav",
+      "label": 1,
+      "sha256": "70fff59395c87e370713ffd64b386ca1fc111d7eb1706f96ae46975ad37cb4f8"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_087.wav",
+      "label": 1,
+      "sha256": "cbf421488d94645af558544c61ff57f755aca8300f6ebf55651f8e416a03b6ba"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_079.wav",
+      "label": 1,
+      "sha256": "98d835955a05fe5f91ac4fb8dd09149edb4c93c40dfb410da23831d91f13a9e1"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_222.wav",
+      "label": 1,
+      "sha256": "a01e117eb1b809ea31c8889f2b2d046eea326c1f92f926a9dc97a2f1ebdf3e11"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_085.wav",
+      "label": 1,
+      "sha256": "732726ceaf4e28922b9a99f9ca6385f948c372e0f17902656aaf35f88754cf4d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_018.wav",
+      "label": 0,
+      "sha256": "b2df3c045c2d3b0e15fa5ea8b68edd58d88527a65b8b1a86383de8421498f9f1"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_236.wav",
+      "label": 0,
+      "sha256": "ff30d28916ac8b29ee70e1b60993e8332d64bd22572a505074743a13a3c248e0"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_141.wav",
+      "label": 1,
+      "sha256": "559de1db1bdd71c674a3d49eec5c21af0a1c008d7334103701618735ff0fc356"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_010.wav",
+      "label": 1,
+      "sha256": "17e809a726e17b30799c46733eeb17f7881a0fd2cb92c632b229d1871a8ca235"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_162.wav",
+      "label": 0,
+      "sha256": "6b1d644b977bc6b02e84a2e8fbeb552b087cc2609f20452c12aa65b0a43ac64e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_226.wav",
+      "label": 0,
+      "sha256": "88ce91cb02a55950ef215db79572c3096cc7df29453528249bc7ae1f4a9cb9b1"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_004.wav",
+      "label": 1,
+      "sha256": "3eee015c65df49feeaa2583ce950bacc5bbdc1bd7af49ae745cf4395853ea6f6"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_253.wav",
+      "label": 1,
+      "sha256": "d14528177310063bbbe7168e23e79060d3e9112dd5155fae9afee7e7ec9e59c0"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_076.wav",
+      "label": 1,
+      "sha256": "bc44e2154d6596f16aa2af14f7c0fa2bee9425dde3516bdc3b88be2a575ad2a9"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_284.wav",
+      "label": 0,
+      "sha256": "08d85d00a700954c9f430cbe92c0e8452c1b8012db0687ff76c75f667bdc4b4c"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_090.wav",
+      "label": 1,
+      "sha256": "d3b6add9b11dd8d808866368efe72414a7827e8362827ba523a353582ccecb26"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_137.wav",
+      "label": 0,
+      "sha256": "c6d9dcc79a50cb0eac973298f916d61fd809b4722a2263032d08dbdad39e627d"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_070.wav",
+      "label": 1,
+      "sha256": "5bf1f8cabf12566c7f510bde97e0392ce8236cae19b563cd05bb86d4d3b21db8"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_091.wav",
+      "label": 1,
+      "sha256": "cf772faca65f03466f9806afdd3145c90aa91b7a0a3114d0afb037a082e938b9"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_201.wav",
+      "label": 0,
+      "sha256": "85cdc1107ce4db600aec8fe3a03e03de0d4e8b3af63425cff0b288d8a31ed9f6"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_081.wav",
+      "label": 1,
+      "sha256": "c2632dfdd235694ea016f680412779fb75cb6a02e21ff43c1524b777c9531853"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_173.wav",
+      "label": 1,
+      "sha256": "94538bbfa0099dd1dee83459b42b3ca35983088e094f8c3f5f8bfc12c8c289ef"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_269.wav",
+      "label": 1,
+      "sha256": "019cc3a89c7ab6f2d02adcca61b316c1f36be8fb5c4b75201e4c41b3b7873f67"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_128.wav",
+      "label": 1,
+      "sha256": "5e846a443b5b6081600466b7b8a8c0f1426b962b1d6e9a5180664cfbd534bb83"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_184.wav",
+      "label": 1,
+      "sha256": "74cbe21dd5c42b96917c98556e31ef1ad8b35d23c2232082fe1f8b9e24038761"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_054.wav",
+      "label": 1,
+      "sha256": "cebdbfa6c3ab2cb54c1bfe408bc5b3da4baa6d8949c61747378dbf6b6b55f0db"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_114.wav",
+      "label": 0,
+      "sha256": "3111b969c7c1f527f5c8ec31780e3869367df74d797b587c458f27e9852c0350"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_042.wav",
+      "label": 0,
+      "sha256": "dd3ab0f32b4f23031391d70f609eaa6067821e9788575170637c790d1c044afc"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_259.wav",
+      "label": 1,
+      "sha256": "b9d75b710aeb3b884a21061e08a37e185e18c26baf1176f0c81f0f84a51c1041"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_043.wav",
+      "label": 1,
+      "sha256": "643ffd95ce3aeabe8762e5dbe1dab9950618085a9937982c8433729a0aa8e0f4"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_093.wav",
+      "label": 0,
+      "sha256": "27250f97771c87f9a5269538a74cd9022d9b8200c490638badcd27a4ecd20431"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_118.wav",
+      "label": 0,
+      "sha256": "b4b1cc5f1ba6de220b854e9c24cf40258dc3c7f3b186b80228ffa864c5ad6a68"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_053.wav",
+      "label": 0,
+      "sha256": "4bcdc0aa4ae8a212129416f1a89f922be8a79cd1525a0d52ae32e2b1ec69afe7"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_202.wav",
+      "label": 1,
+      "sha256": "b65fa0fdf7cd416a151e6fc06eb3eafacce3fcb0efcc7066a833b9c33ed37217"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_234.wav",
+      "label": 0,
+      "sha256": "4e67485f169554d06bc324ba67089560b21e4ba5273d749be37099d7e10c54a3"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_265.wav",
+      "label": 0,
+      "sha256": "006fd379556acf15f738c8c277297feeb09cf37b362d8e91f71cb5c0c960479d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_238.wav",
+      "label": 0,
+      "sha256": "cff1b27cf2ad2bd17f3b1c8b14448d215fb5829a95b605a4adea667e92e9d2c7"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_231.wav",
+      "label": 0,
+      "sha256": "86a8152b7ed99a7707b020222156a98da349585f554577d4dd9667e3a2a856e0"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_207.wav",
+      "label": 0,
+      "sha256": "8d68610ff1b372d8d39047584eeadaf26f4cb99407e3719ab587259dedd53af6"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_177.wav",
+      "label": 0,
+      "sha256": "f1edf62b12ccd566f840f010069b0418daf543ba4e1af012ba543c79f087d373"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_077.wav",
+      "label": 1,
+      "sha256": "1e0ea9580048f257b0f7555f886fe66cd6c440faaee0b2acd0902beb306fa7e6"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_158.wav",
+      "label": 1,
+      "sha256": "509d11ff0ae6a506235ff3c87153569b51eaad6b44fb507b35a9cda79115912b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_039.wav",
+      "label": 0,
+      "sha256": "61856279802f4fec9b01fc14052aa5343f5a0fe639e4a684f12c49cf4eedd100"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_154.wav",
+      "label": 1,
+      "sha256": "5ff18cb7c432d26e9cc8ed9e72dca0fb37beae04519e80411c6b48fb9536fa3f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_100.wav",
+      "label": 1,
+      "sha256": "7833446a42ae399d69c3e96eb47dc00a435fade42cacc08a9fec1723447f3504"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_271.wav",
+      "label": 0,
+      "sha256": "c6ff44f56a605c8558b77f3a0271e356e1442b1a6c39536ec1dbeeb9dd8be6a2"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_195.wav",
+      "label": 1,
+      "sha256": "90e9b190b06a9b0486818d3912a46bee1e2f851005dd1bacab6cb4b4fec0d4c7"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_136.wav",
+      "label": 1,
+      "sha256": "5785a5a63efb8122b2d42be74cc6faff5aeb1df8968d6d7a5b92ca8db8947ca4"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_197.wav",
+      "label": 1,
+      "sha256": "14bf569b35ae116e3e7fbcc63c87b2fb39ff5caa493286ced232341dd4458657"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_267.wav",
+      "label": 1,
+      "sha256": "924a9a3f23cf9792b134176793f9ea073811bc29e947108948499c42dc7b6952"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_220.wav",
+      "label": 0,
+      "sha256": "60d5bf2d73fdaa5f0c3064ba26431790a60d8fabcc68395c52899e7d84d9efee"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_239.wav",
+      "label": 1,
+      "sha256": "3ad9fd7a7c5367359a2f7963bf7cfc5053f0d3d8945a415046037533e62abb11"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_188.wav",
+      "label": 1,
+      "sha256": "da4f7865c0cb52624464ea81d1c3926db4ee4a213799231bb1e684ebe3d6cf53"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_164.wav",
+      "label": 1,
+      "sha256": "afd69158eb079d61c32c0f16fe6fd11e0295cff18213b6fddaa753b955e0e31b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_104.wav",
+      "label": 0,
+      "sha256": "cd90c9d51dd67c2e3a94ec29d5eb26eff6b7d670d8fada8a1d254e44a656cb6e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_179.wav",
+      "label": 0,
+      "sha256": "a8a75da42938812058cb69e9a49735452980e780bb5247fb619810617f2aaf61"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_073.wav",
+      "label": 1,
+      "sha256": "15f094a0cf43bcde7ed26ee87770419ebb7ac26f4f3c8dc465e7f770a9440c03"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_209.wav",
+      "label": 0,
+      "sha256": "b5f66584701538ee82f7de1589e4a9f0b5e3526a89046028665527a651e44a31"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_216.wav",
+      "label": 1,
+      "sha256": "75472a4d3d5b53673ffa0e14f9b6b0756a750773698b9e3da994e02ec7fe478a"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_037.wav",
+      "label": 0,
+      "sha256": "e0d20837c89df34932d0be010a889beb3b23ab4f5ccb54eaf3eef7e49a1e2b68"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_267.wav",
+      "label": 0,
+      "sha256": "a9a901100dfdee32c6cb83097f7e6613d7a03cf28e7225eb7af97214ae4e6e6d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_212.wav",
+      "label": 0,
+      "sha256": "87c0ca0d864c7bcfdc600d588c4451f88f00d435c51ed35fe639f3bb2b808260"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_008.wav",
+      "label": 1,
+      "sha256": "7898744f7f93331c07a5e0ac2e65f7ef82aefee52ab25adea870569cdf1736d3"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_240.wav",
+      "label": 0,
+      "sha256": "e93ad7a4c1d3b49a4b4f0c07343686ef11ca18f23f0899a55ca0ee9174fa806b"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_047.wav",
+      "label": 1,
+      "sha256": "492adbf0a107885f20cea682735a49e2d3483ae17a0d0fa14566b7df6671196e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_206.wav",
+      "label": 0,
+      "sha256": "057884b3225f07a06ae88e6a88cb4091aad792315ea9d9dcef96845c474131dd"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_176.wav",
+      "label": 1,
+      "sha256": "7482af124b07b8be787879882a4a92e3902394ef2ba93da6ac46d392974c8be8"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_079.wav",
+      "label": 0,
+      "sha256": "6ce4c8a9d28255ba6ecdca8fc6190a4c9b060fa548a48126dc8c3db0a338006a"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_215.wav",
+      "label": 0,
+      "sha256": "1a51ea7be1b02a58b4c4bf43aa3edec3b9a525aceb6dc03c6afb49c352fc6342"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_261.wav",
+      "label": 1,
+      "sha256": "2c3e94cc6270d98a3b0a12cb4d4d5c30735cf05ef8b36c26f3d7a98a5da56e48"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_086.wav",
+      "label": 0,
+      "sha256": "e0e23387acdb4089bab20aca60bdd039784ce3c680d80f22241707f48c770ffe"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_051.wav",
+      "label": 1,
+      "sha256": "b1c41e3ab358e500d88641115714564367456cf8d6b520ec12e82456e96cb7fb"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_177.wav",
+      "label": 1,
+      "sha256": "df06f19b724ce646b64e19148c66af3889dde68d66067e2b2727471f7abf1d0e"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_254.wav",
+      "label": 1,
+      "sha256": "b8eaaa903fd80bc3d02788b3ea5a6df41f097ba916a13b5ab5087e83e4f67fcc"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_154.wav",
+      "label": 0,
+      "sha256": "81f08e57531dfc61d268c73785beeda06c0af5f043e2ab2ba980d00ddfa08d72"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_200.wav",
+      "label": 1,
+      "sha256": "fdc704799c691b13122830fdb595ee40ab3fe7312955fe855ea85a90d0cdbdb5"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_012.wav",
+      "label": 1,
+      "sha256": "ac840304b9d0a7d83eefc570024e6340850ec19debabaa01cb307f8d07e339b3"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_075.wav",
+      "label": 1,
+      "sha256": "c38116dfce8c41e74d1bd463c66e990eb885f30b30b7b3660abdb7c4f6e90636"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_197.wav",
+      "label": 0,
+      "sha256": "5622a21822975a88e270531966e9cf8dd1d6e9bc61e5e4c4cd15cb5cf8e9a1ac"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_150.wav",
+      "label": 1,
+      "sha256": "e10917ad1747829112ef71d1ef7a2f6e723ec41aaf1b92db0564012cf0ae6a32"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_202.wav",
+      "label": 0,
+      "sha256": "e228fbddd1bf505a2aaa55599e256ab75341c6a89409521444b139d7fd38ac81"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_204.wav",
+      "label": 0,
+      "sha256": "cf71c6657f71e2148252a674754c9e46429ec05daadcb42cfb4146bcda3d38eb"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_102.wav",
+      "label": 1,
+      "sha256": "f808a6106b00d1dbb99254038a6fdb87f646a1113d1664e95cb1b9d0ca77a1a7"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_062.wav",
+      "label": 1,
+      "sha256": "ba5a368099a3319f9e026846196abd482dac4f6689688f6a254e4bffa6706af5"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_211.wav",
+      "label": 1,
+      "sha256": "21a952a581ffbb6ec1ca688e99d56ee94a9402aae91c268b27066968c0185454"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_066.wav",
+      "label": 0,
+      "sha256": "ba5a264985c79d5115c338044a7f7f41292312796704c5467fd9b971ce5955f9"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_155.wav",
+      "label": 1,
+      "sha256": "924272908a6c60164956c04c26975e252c2517dd2c651f8ac857a93003ebae48"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_192.wav",
+      "label": 1,
+      "sha256": "9632705d2dfc8a360ca6915c0ba8df293bb1263bb8de1f64d0a86c56df20dc68"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_256.wav",
+      "label": 0,
+      "sha256": "bfe6a19a2856b2d9c4834a3e9dd50e5cfaddd14c027797851e4a93963530b292"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_064.wav",
+      "label": 1,
+      "sha256": "49a6064506ee1af8d75ad225511a9af1e479edade32813c3ad614690301aa20c"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_172.wav",
+      "label": 1,
+      "sha256": "411b44cd4413ade0bef87cdb3526ba00652b1a1553a0ed3eba27a5437c570c45"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_019.wav",
+      "label": 1,
+      "sha256": "778577a7a487b0105874e0c962ec3104c277767c096f44d05db4fb124f2a79e1"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_019.wav",
+      "label": 0,
+      "sha256": "7343f3bccd09f785f8126110cb06af39c99a6f3330cc4bb53bdd85bbf3ece638"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_276.wav",
+      "label": 1,
+      "sha256": "e9d89922956247844723b770e4c04a2a2002df8f3e1dd8a34d08997df54876a7"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_076.wav",
+      "label": 0,
+      "sha256": "c032e14adedb400d2615a74dd55153527be5367870ea82e7644b574fadda4f83"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_114.wav",
+      "label": 1,
+      "sha256": "70cfbc96890da75d14067aca7ffed8f34ad14d0f23b5172ffd9e8af46324edea"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_112.wav",
+      "label": 1,
+      "sha256": "21203abfbd4da663a8b37a7fe45437a0ffd5d9037e9b937fa604ac5666ba2e36"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_174.wav",
+      "label": 1,
+      "sha256": "128500e96c6e88f8eb22620b6210bbf1da8f78ec21b84e60fcb734f27ca70104"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_235.wav",
+      "label": 1,
+      "sha256": "dfa4050e067055072143c65adec010163fc2e940b4a4e7ffda65ef917b2faabd"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_033.wav",
+      "label": 0,
+      "sha256": "d63dc018a0675adb94dcaccd8effdbdc3ff0748a6cf2c6fe85fa43c44d82e7b0"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_206.wav",
+      "label": 1,
+      "sha256": "d337ce13f275e073b9386a45129a61a2851215d591fb123c5e288c6bc47ece96"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_210.wav",
+      "label": 0,
+      "sha256": "4ec93f861b2e7c0aa1db7dca53fc39c46538d338dd152b1c48473cea70282ed2"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_244.wav",
+      "label": 1,
+      "sha256": "ecd99f7ef0e51c1c7cd89bfea7aac7128cb38ea54b9949623ec03cfd094e819b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_203.wav",
+      "label": 0,
+      "sha256": "0368fb3d81feca007d3391d8712434c364d8ba64329118a11b3dc7b064cd77d1"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_142.wav",
+      "label": 1,
+      "sha256": "28efdc3121c578a285cb37966042b1a7df131f7003dd2646143912386cadff07"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_046.wav",
+      "label": 0,
+      "sha256": "cd6021901394040adb1eb45455f7c4f1416b5984f563c9ee6a3fad75fc9c0e41"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_253.wav",
+      "label": 0,
+      "sha256": "9c93ec9f1169404e3b26e86c4bbae50fb2b006c65d2272f5d8158c5ff7a02405"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_040.wav",
+      "label": 1,
+      "sha256": "00743c428b9c62c4ce9be905a297850292aabd29c6a3c5acf0b944bf9fdd9200"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_201.wav",
+      "label": 1,
+      "sha256": "f17aa11bb2a3b7b90f7c29ce2626ce0fdc007f3664c386fd80e3efc053e7a57b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_047.wav",
+      "label": 0,
+      "sha256": "698d0b948d0068d42e61d52c0c1ec18690cc90ba1e43b8eb6cc6c03b9ef23bed"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_239.wav",
+      "label": 0,
+      "sha256": "00c3eeead3896a52a887fb7563c73edc9b4c64ca7e5f56d9769ca80a214d2fde"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_196.wav",
+      "label": 1,
+      "sha256": "922e7239d3fc7e9d66823918aaa6ef2c156dc6e76c6d243d2c844b3f5bfa8d27"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_246.wav",
+      "label": 0,
+      "sha256": "5958818f19a58cdd5dd5dd3c71c78bb3ebde5d73b547d2009bc7056eff3ff7ea"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_001.wav",
+      "label": 0,
+      "sha256": "34babcb97e46748ebb43cf500aa15cdef04c93cc67aa594f1318ad28b20bd659"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_148.wav",
+      "label": 0,
+      "sha256": "c4406909f968e6e921c156387b94f25565da115f85906cbd6c54155f17479630"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_266.wav",
+      "label": 1,
+      "sha256": "9c30d44be8e2ebccb3741c51c7d421df8211f7bc215d1f4eef9412b41abcdc80"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_146.wav",
+      "label": 0,
+      "sha256": "40497c76b0850a43bc8e0d84e315d1fa812d1d7d5204bf202d3b47918e093c2b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_027.wav",
+      "label": 0,
+      "sha256": "e829ca0b8e3ba7df570631179eac6d078c1324294914f87a1b188c3065b67a3f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_009.wav",
+      "label": 1,
+      "sha256": "49d704de8452e02d325acc6b0c410e846f1b45846d2e7fb3d6af09090c006000"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_025.wav",
+      "label": 1,
+      "sha256": "9ec6b3643557d6af9c64a549877629cd2fe848f1386d6ee198fc2d971e70f4e6"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_069.wav",
+      "label": 1,
+      "sha256": "b4a32d4d1b2a4f9a4532bc34f3027e91470d1fa7cffe1e3dcd6249c8e93b2ae6"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_185.wav",
+      "label": 0,
+      "sha256": "3002cc2f50c712b3be8847173e76466e9c5c72405d8d666aa10c93628c6e2d1c"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_129.wav",
+      "label": 1,
+      "sha256": "a39a9aebf8757c9bc65ba47d167d73e84e52e065428633441b50c58966b412f7"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_124.wav",
+      "label": 1,
+      "sha256": "30df1a3994a1be52a25204cdeec94be2c2536c63e72e4f3caaff0ad2ef17e7fb"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_073.wav",
+      "label": 0,
+      "sha256": "6d24970526ac6e7222cc493e9d79255756cf1ae8d86591017b78498db6800b02"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_245.wav",
+      "label": 0,
+      "sha256": "9d59c6eec2ca6d0dd0c919930e7930579d47440b59683b27ea0b92c92a617996"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_179.wav",
+      "label": 1,
+      "sha256": "00d5bf2417c527c152e5a22d08022b5a37e2e1d718fc9dbcec11e547e6c074ca"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_003.wav",
+      "label": 0,
+      "sha256": "248ad8c55c270351618db6d786da2501df806ae3278ee1720e67f1cf2fb0fbe4"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_183.wav",
+      "label": 1,
+      "sha256": "15e926fa8ed53096b280cf1fbed1fca8e0779cdf87e3d71479d05d93d83d8892"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_208.wav",
+      "label": 0,
+      "sha256": "d44034644163deea4fc8a04406b5f9120a63af73a70391d6aa50938d7955a7fd"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_228.wav",
+      "label": 1,
+      "sha256": "b4e586a347a82b4603c82e3d3715e15cd7f57e3c7101f3d1c656cbcafcb19fa9"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_072.wav",
+      "label": 1,
+      "sha256": "9bdaa4a85086be1f8f12777ddc99415faa7f20821f673a4e1da698004f59582a"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_164.wav",
+      "label": 0,
+      "sha256": "960a160975b2bf2266250795c665abf0718b66ea9acc09c027e6483c08b80eba"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_061.wav",
+      "label": 1,
+      "sha256": "6ce596678b5f0cf9a89d7b628ddbf4f6197538f8282e55a0994d211a6cd7721c"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_085.wav",
+      "label": 0,
+      "sha256": "85fa1e2b33d085b4028b1a497b253565ef3866ce0ef1af32401456fa2962b18b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_266.wav",
+      "label": 0,
+      "sha256": "479dde9eee23fa37fbd71835789004108f1a3d96c114b95e79c0c4c864b0bbef"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_217.wav",
+      "label": 1,
+      "sha256": "004855f47a47b0fce319a911c73d70d7388d886ebf67e60a22cc042edd1fab26"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_044.wav",
+      "label": 1,
+      "sha256": "448fb8c5985fc4b98e94d55fc766a9022e2a79b9aceb21b8f2a0daac4dedd3d9"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_084.wav",
+      "label": 0,
+      "sha256": "0a0f41cee74804d9e71a1a085a1e25adb36205ffae38733a4f76e2336842fb22"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_269.wav",
+      "label": 0,
+      "sha256": "f63ed89425ca25a1bbd1301197d08003b614588578ede598219d31be41831874"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_028.wav",
+      "label": 0,
+      "sha256": "954940a639bdeece3fbb5ee414ae78b775a704aa7c72b6459746e3025093ab63"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_133.wav",
+      "label": 0,
+      "sha256": "3550042ff1efeb5d602fba20b4cf04c5280fa2b44356998a1a2ce128e43b73bc"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_272.wav",
+      "label": 0,
+      "sha256": "b637060433447fb00990f6eab1e0797f56e740a915fcb4f074d77c11236fa8a8"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_251.wav",
+      "label": 0,
+      "sha256": "0c6825226fdd091ccffbc2504644599f25d44983c3381ca17d60de8196a13b8f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_108.wav",
+      "label": 1,
+      "sha256": "3f1cd2109c12e4337aa95b18628e7a74c8d41b2663d04e4244c669e25558d8ba"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_023.wav",
+      "label": 0,
+      "sha256": "5d2ee24643d52c24b89ff8f4228674d777255098f489293d699d530cb5e192f0"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_094.wav",
+      "label": 0,
+      "sha256": "31c777ebb7cc11f75b060022325ddeb24f410527cb534a0803b77d51e531de2d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_101.wav",
+      "label": 0,
+      "sha256": "519bdf5615e22d4d8378de461a14579d482557baaab572ebac9c15fc1d40cf3f"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_228.wav",
+      "label": 0,
+      "sha256": "8f9764aeb4be49821d34f163f4e4bc46609640017b96e8d1f7807c12133ea1a0"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_178.wav",
+      "label": 1,
+      "sha256": "e3e42ddc4ea3b3d5abfc0c62ffc16512c9426babff937401b3b3ab184cb08a60"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_089.wav",
+      "label": 1,
+      "sha256": "13f985c8721da7c93aaeb7f0a4f54364c91f39b91c4edf9eb5e3a55efa3da825"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_125.wav",
+      "label": 1,
+      "sha256": "7e77e1c82ca5b776993f92f3cb4ebebfa0487b8de25ed7acb6a23cc602337816"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_280.wav",
+      "label": 0,
+      "sha256": "25361206a68c11c0e3079b199e328f19f093be9331a1cac2ac2f6dabd5278090"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_105.wav",
+      "label": 1,
+      "sha256": "41c7e20c9c9e0a54fe0bb10103432688873e82b3b5147ff2109e3d778d5936c9"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_024.wav",
+      "label": 0,
+      "sha256": "d0f56ff80521b32c5525b7ce821c67e78661869fb01a0bf6f880045bfa6a3874"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_181.wav",
+      "label": 1,
+      "sha256": "4d8bcd7ebb6746c1f4b77a6c0a4dd02c03b4a7f53b2ffd4f9312c54b9ec19d3f"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_218.wav",
+      "label": 0,
+      "sha256": "9612ff938549994cb2f85e78e2eb761e22efaf189d4aedd6b831d50d06817eea"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_002.wav",
+      "label": 0,
+      "sha256": "aa4f2a6090ef2d3bb59530e3312142426f5e66ecb13a6c1671941f5c19bfe226"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_086.wav",
+      "label": 1,
+      "sha256": "089158a634ab38e38669d42d86d4bd59e28d62bfa2ccc57ed59d54478e21e3a3"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_277.wav",
+      "label": 0,
+      "sha256": "1a1cc7f84ce923257a1dca989ce04f284d41c4ccdf88b1d7f4aa9b26f5bd4cc9"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_128.wav",
+      "label": 0,
+      "sha256": "9f8364242d3da2e43655d3197e1afbb34906216acbd2b32dea62df362d725078"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_060.wav",
+      "label": 1,
+      "sha256": "232f3ff8be79ccd3bd013017e081bc58f5a767685f8f123dec8fe3ab7f3cbb07"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_009.wav",
+      "label": 0,
+      "sha256": "d14ad67837140bbe7bd9d63c45674a1bb7b59f5db35a0682a44491f7e07ad23f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_121.wav",
+      "label": 1,
+      "sha256": "beeb2880048b571f65392ba8e670f5838e4c51e6b31212b2c3048812b15de126"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_135.wav",
+      "label": 1,
+      "sha256": "b1efd913b79c627e6d36eeaff5e21bd9da23cf5a627de52980e92bca8e047808"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_142.wav",
+      "label": 0,
+      "sha256": "0a32a78096667ea41db9549328a4f06a3c19f18c3b26d9e575a5b47eea941afe"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_060.wav",
+      "label": 0,
+      "sha256": "1562a075d21ce04c485d8c67fd532b34bc39320b7c4f89a09ba1d927a3aaac6f"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_245.wav",
+      "label": 1,
+      "sha256": "f7b72c606aa8b86a06fa848172b74c5c0c061b726cc2a17457dd6e6c0204497a"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_145.wav",
+      "label": 0,
+      "sha256": "be5e3d00dbde2b93338f380fe5b1754a994d8351b3fa4390cef919914c02f9b8"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_166.wav",
+      "label": 1,
+      "sha256": "5f095f470cf37f393acfa157f6881b2d8c31f1d65871b6d717fd506d9ad7f1c9"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_215.wav",
+      "label": 1,
+      "sha256": "520f3b2678ffc944a7e0bf3fcbf7915e94da9490a480a3c95716ece602f0cb27"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_181.wav",
+      "label": 0,
+      "sha256": "d7b02bcff72249424c36c8a0c9413b63b1e0b6cc5b2677a98f81d3e3d6ceafe8"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_186.wav",
+      "label": 0,
+      "sha256": "2e47d1ad6feb4b08870a0d71ec7a35e1d3aae8869a6541f07452c4ce7574daf8"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_042.wav",
+      "label": 1,
+      "sha256": "35eb517dde1effbdd3c8d376ba01979e42e219a186b251ffbe3fda5f1461daf3"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_045.wav",
+      "label": 0,
+      "sha256": "1393ab661222f89340c87ae025f601d87ea204693c9cc7fba217a6333081e9a3"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_063.wav",
+      "label": 1,
+      "sha256": "e11f1d68deb1e1c277a97aa2587fb182836b0d4eb7ea1c1024fb44d419fe88f0"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_153.wav",
+      "label": 0,
+      "sha256": "5210127b08773787aaa89f8e8599e74441645f60ecb060bb91611dbcc6646bde"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_055.wav",
+      "label": 0,
+      "sha256": "9e5aefd30200ff71806321ded22aff9a59139f42411dbcdccd766a326fda1279"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_229.wav",
+      "label": 0,
+      "sha256": "edeedd04c5f1d242bab7c34d641b5fe5ab2940b959878993326dbf5259012a90"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_032.wav",
+      "label": 0,
+      "sha256": "83369300aac9738f4beb7f825852e88b0f118a81f16e744e5cbfdfb6565bc3d4"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_210.wav",
+      "label": 1,
+      "sha256": "f51fe48b1c3b19d0bc4dae8e95b1765ccc63bd11e5cd958287d1750566efc150"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_109.wav",
+      "label": 1,
+      "sha256": "ddfb2ebc442551b7326a2ddfd7a30c6cf4ef36629b05ac49d09c63f1e4fef877"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_027.wav",
+      "label": 1,
+      "sha256": "298a7af2654095aff4df1549d4699f178ac8fbc270be65c5841912959751bb69"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_068.wav",
+      "label": 0,
+      "sha256": "7772bc77b76b489c3b1197d7f6209bd3db80a4c6e404ef9ebb25de6fcc130131"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_071.wav",
+      "label": 1,
+      "sha256": "56678e4dbff689fc2fcc6e3be6feb3091d262cf3839fdac6267a12b86d0d011e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_029.wav",
+      "label": 0,
+      "sha256": "3a820bd9bdf4dfdfc86d6d8dae4033f1d0a548d5ab76e20abaedd6aa15990926"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_011.wav",
+      "label": 1,
+      "sha256": "06f7f260aed19f19dba09e0245027c6aea33d868a2f8c79d04a4441f26a034b3"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_161.wav",
+      "label": 0,
+      "sha256": "2e94dd4a6a1616d20c60058d86eaaf84684147ec2627d707f1e20a0a5c704830"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_204.wav",
+      "label": 1,
+      "sha256": "5cf7ca54a7f501a9db83cc243e2dadee2d4fc909cd7a623708c3aa8f17fe392e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_012.wav",
+      "label": 0,
+      "sha256": "a2d69fa023558f15a17a5394f4969f99f127d055a7b261ca85890b91fe4fa56a"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_241.wav",
+      "label": 1,
+      "sha256": "cf6b065be56e08b16ece09fba7b2368270b4a17e5f0ce47ebb1d89ad0080c340"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_226.wav",
+      "label": 1,
+      "sha256": "0fd40af18e5565e62f687703ef6c0df38d0bc05205c137cc463d795c512a7c8d"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_022.wav",
+      "label": 1,
+      "sha256": "650cb653d9021f26594e319d4103a863bfb7992419db586d05ae57a5b52810b6"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_157.wav",
+      "label": 0,
+      "sha256": "099a6564319549a98323abfdce4d01de35f2b808b2cbfcc36d0e1320f88e0734"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_242.wav",
+      "label": 1,
+      "sha256": "b170a2d40e2f1784edd9a1e71be510202aaae7cd4c89b9d28b50a071685a73e7"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_100.wav",
+      "label": 0,
+      "sha256": "8c28fefbb8a5aee8bbb247c37f0a114d8b05859150d4feb1ed57b10f0c0f7f89"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_111.wav",
+      "label": 0,
+      "sha256": "c050055b11c1ebb0f9afde48fe5ee73c76670d8a0b261783e9ea0f5c848d7bae"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_230.wav",
+      "label": 0,
+      "sha256": "274f255bf8f1cdaff4c9deda675246b1e935771a3775b786652bd6e3b177f3b8"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_250.wav",
+      "label": 0,
+      "sha256": "e486b2734db03e3d3d73322d38ba879864524aa52ed0eca7fd309a8f138c9acd"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_151.wav",
+      "label": 1,
+      "sha256": "4f9767d3acf8f330e3554193c38211172dfbb6ca824664e8a4300404fe265a38"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_148.wav",
+      "label": 1,
+      "sha256": "b6093b7f9058a04a9e04513c3f83be430e69d16617c15513ab194e0d813857d0"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_186.wav",
+      "label": 1,
+      "sha256": "22c635efeae2dea7bf4047de0f00f33e33e76ef92b54689d2d6a262e7c474182"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_061.wav",
+      "label": 0,
+      "sha256": "7275fb64cfe2137053086c594f168fbdd3c303dd228b287c80b17bc8afff0e03"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_098.wav",
+      "label": 0,
+      "sha256": "fcb8c025f7c65c7ac0e2f634a5bc3ad708746f56a2ad104f2a836118d8162847"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_065.wav",
+      "label": 0,
+      "sha256": "1a46effd1f9ce40b6d72b2a3d716e16e8fe931cf35d9ca3016954d87ecef71b2"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_216.wav",
+      "label": 0,
+      "sha256": "7a06b31097bc68f6a83d12166886b986aa710c23719f758598f6d20f7741c8d7"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_097.wav",
+      "label": 0,
+      "sha256": "312f3581030d383c30925c16bab4d6cecd9dbb4bf31d03e7bc712ff813ef9a73"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_161.wav",
+      "label": 1,
+      "sha256": "33cc843b3b3d293990c8beb03a745fe39c2a8b4ff9356088cdbf10227772c46b"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_262.wav",
+      "label": 1,
+      "sha256": "0cac4cdd2bc39f87c5356d7de0329316bd016103b530c6bf532aed82b061a995"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_221.wav",
+      "label": 1,
+      "sha256": "2ef8d1f48c6e5c0a2187e722713078ab5522516e33f1b4db031b16336448764d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_090.wav",
+      "label": 0,
+      "sha256": "9930667b39a235dd8b5e857876f2e8ad307a16ef91f363c61508f85c7da579a1"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_109.wav",
+      "label": 0,
+      "sha256": "28dec4b678bbd0fa4d06c07eee9b6ff9bb0bffd5c1635220459f05e023e17a25"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_259.wav",
+      "label": 0,
+      "sha256": "d6feb20afaa745088d2e40378fb50aa83f14e5cce73e58af0ddcace25e5f3285"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_251.wav",
+      "label": 1,
+      "sha256": "a2ddeaa9bc6286f8232562168a41cb9bee90c3a19d9ec43112b7a0d2a27437b7"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_035.wav",
+      "label": 0,
+      "sha256": "f288e96cb8c376021c24b9986772422366e131e8f4ece316f925511c7073e4a7"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_140.wav",
+      "label": 1,
+      "sha256": "c3f93d0f4f46811c8a65e5b9590426f929e98ce9f7ae13d55829117da0d85619"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_147.wav",
+      "label": 1,
+      "sha256": "fb6bd4bb9a3594d912f55a9716bc2f6bd3246e291c796a6a035ba885162ed8ff"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_190.wav",
+      "label": 0,
+      "sha256": "4e4cdda549ae6b70b4c0769bc202a7656273320b58da22ae7f59e90071e5929d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_262.wav",
+      "label": 0,
+      "sha256": "00490a37de21846154585e052355da05fdb6d47a1128702f4c4f578a678a9014"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_000.wav",
+      "label": 0,
+      "sha256": "019958c4d342d72b69016017917c7c9736e34090b11fc6794de8fef65346b102"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_242.wav",
+      "label": 0,
+      "sha256": "e95bdfeab35dfc9f3a99db9bbc546439787e1a72d203c207b8899e8456c79f76"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_158.wav",
+      "label": 0,
+      "sha256": "4e6e953a5af14fc759770f3639fbd9e90e63701855e01dbc9205d84e7ca5c697"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_227.wav",
+      "label": 1,
+      "sha256": "8f31780143b530afb014ca35df6be0d201fb3e703068077e6917ffd81b447b8a"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_256.wav",
+      "label": 1,
+      "sha256": "65751888069a1afdcf11a97cbbe1865df0b43cc29b8e700fea74f097ed3bd430"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_059.wav",
+      "label": 1,
+      "sha256": "55c717553fc443cb4b91d862a572eb36f9d8557499b542f4179955fb663ef3b4"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_232.wav",
+      "label": 0,
+      "sha256": "0c3be68b21f79a756b13372d6b0cea5fef73284d50e1f9b8012e1d7ac17b74f8"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_030.wav",
+      "label": 0,
+      "sha256": "a408059347f0648c324877ff1fdef91d61917d23e65e64692adec338b4b314b9"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_122.wav",
+      "label": 0,
+      "sha256": "4a4a1ca50e9509973c310a7450cad17fef1565c5b0790e1c6375dd3a91f32716"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_124.wav",
+      "label": 0,
+      "sha256": "433420e0aa8c743e84ccceed47ce78d21ec10020cdbb0e729d784e1187c83efa"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_075.wav",
+      "label": 0,
+      "sha256": "6542615fa702b867d297c31fbed3366c544b725c7bd70f6db55b75a4053224f6"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_194.wav",
+      "label": 0,
+      "sha256": "e9a1bca96c11f47cd3a9a745c886a5f93b3f5a2caca9af3b5d957689138616b0"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_031.wav",
+      "label": 1,
+      "sha256": "de190b546a5284931fe11ff0a1b63c3a3729155e9d4aba8f38e4c8ef8dc8b34e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_051.wav",
+      "label": 0,
+      "sha256": "6883ea254a2a99c4dac66eb9fef30d5e3940cff48f1f1d31c2f30d0b4bb7d221"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_178.wav",
+      "label": 0,
+      "sha256": "afde7a7e8f4cce698eb2f963cbfd6d8741d7c85d64e68c2ae60d7c0ef78942c4"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_185.wav",
+      "label": 1,
+      "sha256": "45b3d44e2c40ece3696abd9a4e46fbf7e5d695ca5f2f00dee447ef6491ee98f4"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_252.wav",
+      "label": 1,
+      "sha256": "bddd6caa56059cb490ea297c11ac7819ac1094e99f1c182c7765382b0e585d78"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_113.wav",
+      "label": 0,
+      "sha256": "2e850fb91f88aedbbf14b744287165965930841a0af99f51b20520835f03ec78"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_014.wav",
+      "label": 1,
+      "sha256": "ff6cc7a982e88dd133916659f8a313649198d68e3fae34f6f7eef7adc4d8940d"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_170.wav",
+      "label": 0,
+      "sha256": "df18b54f88784dae13f8b3ae9caa1bdb5249575db2c86592c3a0d3f42430f2b0"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_010.wav",
+      "label": 0,
+      "sha256": "c15ab3ad1d32b675235ca58e14a5614e20e6efc676dbad402e5b3b2369c5a3d4"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_119.wav",
+      "label": 1,
+      "sha256": "8a1681ec043453c859991989475189b33868403f1f6674f1822db04d3146aefa"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_192.wav",
+      "label": 0,
+      "sha256": "2f64964e6806b72e14d37b4bf87ab090b21f5fd24c0766a47b84c443b588d03b"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_248.wav",
+      "label": 1,
+      "sha256": "60c07c9cae182c0314a60ba5ad96a88e1821634cc5478190f0fb0758353c0795"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_199.wav",
+      "label": 1,
+      "sha256": "864d7c6a3212351d3c7d6a6d47d732834b2504494cc82ecf0c6e186fd0dd1061"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_172.wav",
+      "label": 0,
+      "sha256": "dfc6bb0b083791a3cfd7ecc5d36cc09b4e9657816859affc4f9aab73db5d78d2"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_093.wav",
+      "label": 1,
+      "sha256": "c52879280ccc033af8c4671df2b2f1aefb88c760e6a96c7336233d20ccf6aa1e"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_225.wav",
+      "label": 0,
+      "sha256": "bcf4332f0ad7b3e6a0d2b3fef76775b1fcbf645c74e9c88ddbf22ca1398f286b"
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_081.wav",
+      "label": 0,
+      "sha256": "f6ca6dd4a4de9391bcae6f98e9d7d021d67c7547d0616c9ad689986408f762b9"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_260.wav",
+      "label": 1,
+      "sha256": "abcc0a46dcbb095e58d56067b5e2199af93a31d33377de4d3dc42340630b3b15"
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_055.wav",
+      "label": 1,
+      "sha256": "bb9e1c9cab11e4285c8df63630b446c4404bb3b33220cb682310515b7e172834"
+    }
+  ],
+  "test": [
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_048.wav",
+      "label": 1,
+      "sha256": "158c748366612620396cff2d2dff6fba57b40650c97215c56f152df68560a865",
+      "prediction": 1,
+      "parkinson_score": 0.8453746081238284
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_099.wav",
+      "label": 0,
+      "sha256": "11e8b6b5056edb5ee48b2fc988726f9e2da0dd7d294acec6458a4bb3536079c9",
+      "prediction": 0,
+      "parkinson_score": 0.0770374822855837
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_059.wav",
+      "label": 0,
+      "sha256": "4ce08c60c3669a991aae97d370dc5aa08c105cb5cec97a7afc2c6c3716775243",
+      "prediction": 0,
+      "parkinson_score": 0.23340312854064033
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_163.wav",
+      "label": 0,
+      "sha256": "488b7a275baec9d5e5a1afab1d74649af5fa7808f214e1401b69fc4bc36748df",
+      "prediction": 0,
+      "parkinson_score": 0.01383739796627619
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_168.wav",
+      "label": 1,
+      "sha256": "45ee99459c78d2bb3f2acf52f930da57d235667efaa8c696c7b02241833f19e2",
+      "prediction": 1,
+      "parkinson_score": 0.9511429451115612
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_127.wav",
+      "label": 1,
+      "sha256": "f6f79ded808a14ce8b849de9e048b5f2d0307d03e8a32ae6fbb9b196e5775ba9",
+      "prediction": 1,
+      "parkinson_score": 0.9718539293444957
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_207.wav",
+      "label": 1,
+      "sha256": "64ad741994099900cba81e09f0d88f31544668f8c8cee7e47e19a21f6e9cfb47",
+      "prediction": 1,
+      "parkinson_score": 0.9317597673355442
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_005.wav",
+      "label": 1,
+      "sha256": "f21fbb1ce639a2b816579c73e76d388c33a066d2edc02190b9f70c3981baa7af",
+      "prediction": 1,
+      "parkinson_score": 0.9443103490742545
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_255.wav",
+      "label": 1,
+      "sha256": "5a3b0ebdf9d6662930c896a7699a5f2ac362b0fc813a5fad153c466a1fdeb074",
+      "prediction": 1,
+      "parkinson_score": 0.9417626762837514
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_268.wav",
+      "label": 1,
+      "sha256": "03dc21a1c0d6864856ded10cc7e3d08a9b20579dd93f99f749c4d18f07ae3dca",
+      "prediction": 1,
+      "parkinson_score": 0.9499149674490821
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_249.wav",
+      "label": 1,
+      "sha256": "0b2424d52653c57822f861724d6d211edfc2064d19689d5ca57ab9dc84b9d41d",
+      "prediction": 1,
+      "parkinson_score": 0.9259614638525766
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_180.wav",
+      "label": 1,
+      "sha256": "48f43a15bad5178a4985db84e435f0c34436c8ba80db613860d73ac491198d31",
+      "prediction": 1,
+      "parkinson_score": 0.834068907769913
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_052.wav",
+      "label": 0,
+      "sha256": "1a1e14e3f245d74791d03c728b1c31a2f312e88409081d1126b9abdf44533b20",
+      "prediction": 1,
+      "parkinson_score": 0.6220400775681446
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_106.wav",
+      "label": 0,
+      "sha256": "de6b7585754da01f7b2371b6f9dcd9bd6475db10b68609d42fd33aa725caacb8",
+      "prediction": 0,
+      "parkinson_score": 0.034786493570745015
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_115.wav",
+      "label": 1,
+      "sha256": "44720a6a36548555a19fd0a34784c79611356c06a130dee2cc27df41810d73d9",
+      "prediction": 1,
+      "parkinson_score": 0.6850593244472146
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_098.wav",
+      "label": 1,
+      "sha256": "bc56e4f648d9ba1821991d5d9d5e845457173bc472e4cdd42a89504224c65134",
+      "prediction": 1,
+      "parkinson_score": 0.9881959306431135
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_021.wav",
+      "label": 0,
+      "sha256": "3be482538c7fc5f765a5e46f458645a43dd9e1936011e29189f75e48bc30c5f0",
+      "prediction": 0,
+      "parkinson_score": 0.008511374978930418
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_013.wav",
+      "label": 0,
+      "sha256": "1203dc3e823811dbbd9e58acab6ba777c1db167f536037688ff5eaad682cd391",
+      "prediction": 0,
+      "parkinson_score": 0.08977895367876108
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_087.wav",
+      "label": 0,
+      "sha256": "ad325785697ef042562aee93d951108f5940589e5307767c54b686187c8c8b43",
+      "prediction": 1,
+      "parkinson_score": 0.6369595943215197
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_050.wav",
+      "label": 1,
+      "sha256": "0fd0f040e4e847a96693be60f62de34f1ddf77e0127cd68d6c3c1a1f96065258",
+      "prediction": 1,
+      "parkinson_score": 0.725049258835489
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_149.wav",
+      "label": 0,
+      "sha256": "fd516d521469b012c3becc510a0ff82a78c63821fba97623c455f227e85d0500",
+      "prediction": 0,
+      "parkinson_score": 0.032014845178558564
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_134.wav",
+      "label": 0,
+      "sha256": "bef1e71765ca662d96ca8dfb289b42c2b03ae272ce2bbe6e37a2ba094ec08c71",
+      "prediction": 0,
+      "parkinson_score": 0.024623068250660258
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_096.wav",
+      "label": 1,
+      "sha256": "75b69a0e718bb7160fa21c4b0ade23ad76a50f7321bb88f2d1ebfd1113d65b61",
+      "prediction": 1,
+      "parkinson_score": 0.9662861674597606
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_241.wav",
+      "label": 0,
+      "sha256": "0a5ecf086f8ff70ade3be263e0fa0ab16bcb7eec18bd0760e9c84022bc33cc25",
+      "prediction": 0,
+      "parkinson_score": 0.2127622960999524
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_257.wav",
+      "label": 0,
+      "sha256": "596497159c97e12252e24a6df0bc5ba040c63594ba98fee5c1c586c711280d49",
+      "prediction": 0,
+      "parkinson_score": 0.058752858321364065
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_071.wav",
+      "label": 0,
+      "sha256": "3d0e0a2f5945ac19c0c1209bfc4da00311e9926c368108de662408e35b8b19a8",
+      "prediction": 0,
+      "parkinson_score": 0.015006101128584784
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_110.wav",
+      "label": 0,
+      "sha256": "070dfb1a00d61699bd27dc1cac534e7a89f918f4b65783a45e8a013172ea803e",
+      "prediction": 0,
+      "parkinson_score": 0.05875663111847044
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_130.wav",
+      "label": 0,
+      "sha256": "6fb71d1bd02f33ad807d56b0ca94890f1e764b7add2d2d3afb9fc3ba480a40fd",
+      "prediction": 0,
+      "parkinson_score": 0.39487811534366346
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_160.wav",
+      "label": 1,
+      "sha256": "61db8f82b7b7fd58013e791c68c7302a3f4de92fdd24294747914e5ca403a5c6",
+      "prediction": 1,
+      "parkinson_score": 0.9242755519154654
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_146.wav",
+      "label": 1,
+      "sha256": "1993c1c6c4c073cc3f91cf19309a3270f8484dfaced1deede76761c3cd5ee093",
+      "prediction": 1,
+      "parkinson_score": 0.8307698921667256
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_023.wav",
+      "label": 1,
+      "sha256": "ab03e7e3769443722e4ccde0172515a3f7eaed1d4db471631bd1c6e740d6a670",
+      "prediction": 1,
+      "parkinson_score": 0.9733704008846376
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_157.wav",
+      "label": 1,
+      "sha256": "036e4a5ab1b85c1fa52f9f199e854cf27c1a51ff3a29f8d1ce15dd092140f8f7",
+      "prediction": 1,
+      "parkinson_score": 0.7059628940205478
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_270.wav",
+      "label": 0,
+      "sha256": "ca2f29389cadd138ef6cb65067ddf285e780f1f26bd63c064f1fb2eb6834317f",
+      "prediction": 0,
+      "parkinson_score": 0.1548129570284407
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_273.wav",
+      "label": 1,
+      "sha256": "7b1f815f69ea1fd8c48ba6636542e24f3ac03bf836294a612e2dd039f89f9211",
+      "prediction": 1,
+      "parkinson_score": 0.9544424928760425
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_017.wav",
+      "label": 0,
+      "sha256": "6a606f55201e589fe63ad5d2af85d253b27dcaefd66724c59c046e1b8a33b7d4",
+      "prediction": 0,
+      "parkinson_score": 0.09858574036568883
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_045.wav",
+      "label": 1,
+      "sha256": "3aba097982d996d8de210c29ffce578ea3bbea1692f151083205f0e47d032c30",
+      "prediction": 0,
+      "parkinson_score": 0.42152808446347884
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_054.wav",
+      "label": 0,
+      "sha256": "8cdd5ade234eae17ddf5e9207be51e272bc57af9c7129f6259eec9b61d6b82ad",
+      "prediction": 0,
+      "parkinson_score": 0.1482163620928508
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_091.wav",
+      "label": 0,
+      "sha256": "cc8f0c184b10868914a1e9b3917cfeb712783ba25407643ee5e6a9cc4fcfdfa6",
+      "prediction": 0,
+      "parkinson_score": 0.03549886859532329
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_159.wav",
+      "label": 1,
+      "sha256": "f704e97de9e9d1021614be8b10be05df0134222c3db39c9abc721863a148ac15",
+      "prediction": 1,
+      "parkinson_score": 0.9489105526427151
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_026.wav",
+      "label": 1,
+      "sha256": "1e5545947abd424298958fd15ea4a5a6a97b004753a41b1987f6728b75d36778",
+      "prediction": 1,
+      "parkinson_score": 0.973521094248681
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_191.wav",
+      "label": 0,
+      "sha256": "5f84bdab7e3636c31b76c872f0f7e8017ce141e4cc415016c30dca35b2e20697",
+      "prediction": 0,
+      "parkinson_score": 0.04226187783551061
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_037.wav",
+      "label": 1,
+      "sha256": "7e650cb98cfee99a54f5becdb033a1dd5538ae3bf8363382cd9a61113283f2a4",
+      "prediction": 1,
+      "parkinson_score": 0.9675187490717262
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_198.wav",
+      "label": 0,
+      "sha256": "d33c9190cead3fb60dd97c56b3f44eb1c09b48ac1fcf9149bfe2587dadd94f72",
+      "prediction": 0,
+      "parkinson_score": 0.008206031289708102
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_049.wav",
+      "label": 0,
+      "sha256": "15d99c1e02c49708b8e6bab50aaab860e1f756f4f35a6244ff1419d3e248d208",
+      "prediction": 0,
+      "parkinson_score": 0.08134440737361613
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_021.wav",
+      "label": 1,
+      "sha256": "ce53c3446017ce49a0f84ef26ff2c7570d3d742da9a55e9f215e75f56b3ec95f",
+      "prediction": 1,
+      "parkinson_score": 0.9733622738391716
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_171.wav",
+      "label": 1,
+      "sha256": "72d97a77ecd2ad7cdc1af59e6b99f52fb08589102f1798648e8dca0f56e6f4f4",
+      "prediction": 1,
+      "parkinson_score": 0.7932320660292435
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_214.wav",
+      "label": 0,
+      "sha256": "89b73a73a0b3c30bc28c5d3700b5e51b6d49f39a453fce850052d9e268609aab",
+      "prediction": 0,
+      "parkinson_score": 0.16086798419935117
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_188.wav",
+      "label": 0,
+      "sha256": "0e6827238ef0d4e5180f4c2ee2fea92d5b47cf15d5a1da7d5592bde09270a303",
+      "prediction": 0,
+      "parkinson_score": 0.09437728816078647
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_003.wav",
+      "label": 1,
+      "sha256": "90150b689b3b0ec96577c595e02ed1043e4e8a562a9b086bdae824eb3095817f",
+      "prediction": 1,
+      "parkinson_score": 0.7442846649367302
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_102.wav",
+      "label": 0,
+      "sha256": "883226cb6a32b015e47ae140ad40c7f390488ca35d8bd0a561f7a8b05a90c0c7",
+      "prediction": 0,
+      "parkinson_score": 0.3209451616945298
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_232.wav",
+      "label": 1,
+      "sha256": "58ca09933111e3f48e061f750251867294d1d3abc352218a1d3aefdcbc01b16c",
+      "prediction": 1,
+      "parkinson_score": 0.949395479159569
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_024.wav",
+      "label": 1,
+      "sha256": "7e2349b81dbdfcf7242b27568d7f14c91c247dbf670985ff8398a8f92196f43d",
+      "prediction": 1,
+      "parkinson_score": 0.9577800174236051
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_169.wav",
+      "label": 0,
+      "sha256": "8558f0c3926f93240a4f8361f1185f8f60e10b43746c775170c4dff5e16bcd65",
+      "prediction": 0,
+      "parkinson_score": 0.05888631154782292
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_281.wav",
+      "label": 0,
+      "sha256": "d8d3633ea5cbe9fd50b5ea2ca8d439e03210e212fb264af05a3bbf4874cf35e1",
+      "prediction": 0,
+      "parkinson_score": 0.035985778194580646
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_187.wav",
+      "label": 1,
+      "sha256": "6c918fb84ab6d769f4c9a7877ee6295cfcfdc2d337d6c9edfd7c09a2b3db5b74",
+      "prediction": 1,
+      "parkinson_score": 0.791041152304107
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_225.wav",
+      "label": 1,
+      "sha256": "7873dab027778d542d826a7334f78787f5e291a140089b540e4b4bdc93068c25",
+      "prediction": 1,
+      "parkinson_score": 0.9304786143973759
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_016.wav",
+      "label": 1,
+      "sha256": "0ed575d4217c5ad1c5057865c6cf73ea00aa9e744d1e1e527bfc99b4cc12ed4d",
+      "prediction": 1,
+      "parkinson_score": 0.9833811141623977
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_174.wav",
+      "label": 0,
+      "sha256": "f0ad1e50a3b37cea9e83079199aa79d62de629400af4bddfbc7c6f62c04d05d7",
+      "prediction": 0,
+      "parkinson_score": 0.1419550430465649
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_274.wav",
+      "label": 0,
+      "sha256": "c8cfc05255b14718a132f9e8713ee34cd96ebaddc90a669ae10bf8e3ce602bed",
+      "prediction": 0,
+      "parkinson_score": 0.11075303378633798
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_151.wav",
+      "label": 0,
+      "sha256": "44ada021763676d8f2872f1b9b091024734913c133edcb7e824ee91d61c3f998",
+      "prediction": 0,
+      "parkinson_score": 0.36659774701377973
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_067.wav",
+      "label": 1,
+      "sha256": "27c179bfdd5ad4fdd8479834291fc6124344423e552eb5222f19fba5cafc0b07",
+      "prediction": 1,
+      "parkinson_score": 0.8045026035292235
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_286.wav",
+      "label": 0,
+      "sha256": "88305272d38eff21a2a020ae53767aeb62b83a732dd5314ff3ef9e135e172c5c",
+      "prediction": 0,
+      "parkinson_score": 0.08588405443216433
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_219.wav",
+      "label": 1,
+      "sha256": "6060181faea2eae2b1c8ad2a0d7e005a3da3121136220bc1578bb8d29decb2e5",
+      "prediction": 1,
+      "parkinson_score": 0.9821341296422708
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_007.wav",
+      "label": 0,
+      "sha256": "208762d7c7c702f332ce4fbc8197afd8ceae37054f06cd083b53d981a6a74009",
+      "prediction": 0,
+      "parkinson_score": 0.02945895842890284
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_224.wav",
+      "label": 1,
+      "sha256": "8df1535ec900bafcf239af02de93ff21d44f4664b670318785dc28149c92296f",
+      "prediction": 1,
+      "parkinson_score": 0.9486805708761246
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_261.wav",
+      "label": 0,
+      "sha256": "0c90c66a23c70b55a182d13ff15386d2719f77cae81746d6f74138809fbcdbde",
+      "prediction": 0,
+      "parkinson_score": 0.02271502157733141
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_190.wav",
+      "label": 1,
+      "sha256": "098135bf00050c6bc7de26c91eb183c5f9cff9740c2ef7c669263d593cf6e27b",
+      "prediction": 1,
+      "parkinson_score": 0.8349165792799222
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_034.wav",
+      "label": 0,
+      "sha256": "a52d6d8be08c272af4fd07f382a1ce6d4ee9332cc1d0681a6170739e13031dbb",
+      "prediction": 0,
+      "parkinson_score": 0.10295308193125681
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_246.wav",
+      "label": 1,
+      "sha256": "11a0c6298ae546b360b1045477c7fd1af8f949dd460ccac1a503ebbd8a1bba44",
+      "prediction": 1,
+      "parkinson_score": 0.7903584085229786
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_191.wav",
+      "label": 1,
+      "sha256": "2db627e26ee6f19ddc4e95224ac8fb911ab557e2445bcb70018f610bc92d0652",
+      "prediction": 1,
+      "parkinson_score": 0.9110227592948028
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_123.wav",
+      "label": 1,
+      "sha256": "028862cf965773965cb3a2cf37c0619048d7f785dd2ab2433e23ba98b4545c68",
+      "prediction": 1,
+      "parkinson_score": 0.8897041940917685
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_020.wav",
+      "label": 0,
+      "sha256": "937d00e99016fd9b999beb4785d4917a3c03c67c46958a49d20d1e5ccfd60aa2",
+      "prediction": 0,
+      "parkinson_score": 0.12638439890921602
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_212.wav",
+      "label": 1,
+      "sha256": "c9dd714f29d27b58306fdedf820b7dc3675810cbab323217233023ed646493a7",
+      "prediction": 1,
+      "parkinson_score": 0.9677556496050865
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_089.wav",
+      "label": 0,
+      "sha256": "3d9966d61ad43579b6fcc99a12fec5120daee0213646ce9995c5fd7682770390",
+      "prediction": 0,
+      "parkinson_score": 0.294284251981168
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_166.wav",
+      "label": 0,
+      "sha256": "e6152d37f400616008085120b3a8accf0eeea6e627274e33693e98e5ee0db624",
+      "prediction": 0,
+      "parkinson_score": 0.04142121061872316
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_129.wav",
+      "label": 0,
+      "sha256": "aa543c8eeafd67e30f7a5c8612f50c138f9f34504fc37c0d1cb1dead0a2056dd",
+      "prediction": 0,
+      "parkinson_score": 0.20460969603803755
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_277.wav",
+      "label": 1,
+      "sha256": "bccdc2f3c54254231c943c45b4e7370c3c50af35dfc0811cc11a155adf06a569",
+      "prediction": 1,
+      "parkinson_score": 0.5404544602299169
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_131.wav",
+      "label": 0,
+      "sha256": "4cdfbf7e7b187c49e1f5ebe9fd508f1a1b25f905a038513c96e5d556bc149106",
+      "prediction": 0,
+      "parkinson_score": 0.04426957020420243
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_048.wav",
+      "label": 0,
+      "sha256": "36950f3a7a68939531017754673d3e1052b6dab3d8ae190bed9a1e5d5b24b551",
+      "prediction": 0,
+      "parkinson_score": 0.07785560545747071
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_121.wav",
+      "label": 0,
+      "sha256": "a9c9bd1961b8ca25f9abd67e4e80e6fb4a51b8d07dc34509918a2154f645eccf",
+      "prediction": 0,
+      "parkinson_score": 0.014668946722086436
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_050.wav",
+      "label": 0,
+      "sha256": "6ab68f9172dbc65489ce4a5ac4da1e5709b5f6ab47a94789635ab27ac3c53f19",
+      "prediction": 0,
+      "parkinson_score": 0.14553708213087854
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_134.wav",
+      "label": 1,
+      "sha256": "c0e403699549eaf94c1c4d5da1f638f03ad23488798e47184a54c3d5796a7ca3",
+      "prediction": 1,
+      "parkinson_score": 0.9268316845688265
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_235.wav",
+      "label": 0,
+      "sha256": "259ebeca1f624d4a8023dccf5e5607bb12060ddb293bbfbd396f28a873dcfcc1",
+      "prediction": 0,
+      "parkinson_score": 0.2010899199060277
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_229.wav",
+      "label": 1,
+      "sha256": "38356df1ed30a94ada88253cd05ff74ff13f1eebcf3a5b9b253dde5c89547aa3",
+      "prediction": 1,
+      "parkinson_score": 0.8868569475526125
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_032.wav",
+      "label": 1,
+      "sha256": "67de632db4f31122c80d47ad498c6045ad3998a81f41dde10c34bf8983f5b5d4",
+      "prediction": 1,
+      "parkinson_score": 0.8905532993646708
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_008.wav",
+      "label": 0,
+      "sha256": "4d2855ea68f7a576622d1a4d5c4089dea7107d966f384dd9369ef2ecff1bf6d0",
+      "prediction": 0,
+      "parkinson_score": 0.03891525950628596
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_160.wav",
+      "label": 0,
+      "sha256": "5b5cc065b26985850f0b35f39932a65361d4388ecf0a86903ad021ebc38117d3",
+      "prediction": 0,
+      "parkinson_score": 0.047621162485383624
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_080.wav",
+      "label": 0,
+      "sha256": "00999a619bb5e6ac544945aa0a7ff4e39daf4ff01816355e1439b0a9b9907957",
+      "prediction": 0,
+      "parkinson_score": 0.09597873821317847
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_066.wav",
+      "label": 1,
+      "sha256": "1c8314ab0e0d2dfdb1bbe3b361754afd5d75a7463e5e00a223210f4344169160",
+      "prediction": 1,
+      "parkinson_score": 0.8182349262524424
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_072.wav",
+      "label": 0,
+      "sha256": "9286051139c142215efbdd3c63870d459a97dedbeb2d2caa957e1c664343e591",
+      "prediction": 0,
+      "parkinson_score": 0.008395165045448896
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_036.wav",
+      "label": 1,
+      "sha256": "d36f60cd776f6b67dbb5e18e5703f725a81f17789d1b648efb621bf9ae233297",
+      "prediction": 1,
+      "parkinson_score": 0.9200096683983865
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_116.wav",
+      "label": 1,
+      "sha256": "c4dd025be150a700e8465922d585e913879dcd06d39ff9e8cfa4d0efc8da15c1",
+      "prediction": 1,
+      "parkinson_score": 0.7120377408448134
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_205.wav",
+      "label": 0,
+      "sha256": "8c4e4fdd59736835e0d740ed8b762c115b237fab19150f099f6fc62db3cc4f0b",
+      "prediction": 0,
+      "parkinson_score": 0.007387894350449888
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_058.wav",
+      "label": 0,
+      "sha256": "4a7eb82d59a1fdf94b773b4c58762113baef2c55c4a465ac6f55db887935662e",
+      "prediction": 0,
+      "parkinson_score": 0.04400085370408607
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_220.wav",
+      "label": 1,
+      "sha256": "bfa788e466e85dcd3fd84734e3ce02b0c243b26aa23648b3eba71cba97838ae6",
+      "prediction": 1,
+      "parkinson_score": 0.8728943353037896
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_194.wav",
+      "label": 1,
+      "sha256": "de52b09f4c180d27b50d8b82bc4d8840ad6ca09a9390fdf704e2ae44887fd83e",
+      "prediction": 1,
+      "parkinson_score": 0.8501283204538729
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_243.wav",
+      "label": 0,
+      "sha256": "bb4dcf9f6bd23378ff221006721ef9da5cc24b4593357ee4a4bb97be47c75959",
+      "prediction": 0,
+      "parkinson_score": 0.11347875965951494
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_237.wav",
+      "label": 1,
+      "sha256": "86a10f2d52a543556c008c5c88da3d50d91a60c9ec7f5c0363cb110fc5bf3375",
+      "prediction": 1,
+      "parkinson_score": 0.9029031809757698
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_083.wav",
+      "label": 0,
+      "sha256": "f76b6d29ff648fb0a2b061016673df5c22b41560d4f00af19af7e8c90c960307",
+      "prediction": 0,
+      "parkinson_score": 0.03461479663305432
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_263.wav",
+      "label": 0,
+      "sha256": "f41ae4f493ac91750b105a47eced268a28338cc6c632b51c18c95aac2f9e7351",
+      "prediction": 0,
+      "parkinson_score": 0.3899767013031017
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_094.wav",
+      "label": 1,
+      "sha256": "0cff1c01110be49368a92080164eff3b7e954155f15bcb6feee25ce29821da98",
+      "prediction": 1,
+      "parkinson_score": 0.8855947206615664
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_034.wav",
+      "label": 1,
+      "sha256": "66d8e269e3a7c35d3095836af984d2f9880d998560f1011d82e82bd511ab9607",
+      "prediction": 1,
+      "parkinson_score": 0.9330716593462132
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_175.wav",
+      "label": 1,
+      "sha256": "b8b776c2955612ac3efc53446e0cb3bac0d7025255e66f3453c572a7678c91c9",
+      "prediction": 1,
+      "parkinson_score": 0.9606467223502967
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_017.wav",
+      "label": 1,
+      "sha256": "a0297ae2792cdac687761429c6832c786a57f979355c29e8f65d484d202c1134",
+      "prediction": 1,
+      "parkinson_score": 0.8722168846893181
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_088.wav",
+      "label": 0,
+      "sha256": "a888496186bd33140d2444e5040b909a2c6a71de9898736a19011b5025c8e8e9",
+      "prediction": 1,
+      "parkinson_score": 0.7624618218552744
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_214.wav",
+      "label": 1,
+      "sha256": "d0e07aee013733ed217ce8b3d3e8ad705ac6eb6725fd5a44a143e5a40c8df2bc",
+      "prediction": 1,
+      "parkinson_score": 0.9335985977534426
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_252.wav",
+      "label": 0,
+      "sha256": "b2cb5fb112ab94ab5db0bc8f17f03510ac238f26cf57025db2064571976af063",
+      "prediction": 0,
+      "parkinson_score": 0.025659620179408156
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_103.wav",
+      "label": 0,
+      "sha256": "dc05598b5d8fc34a0c363bc87637a7e2efb239e7b88fb10a34aa91bd666cb871",
+      "prediction": 0,
+      "parkinson_score": 0.395413154542955
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_187.wav",
+      "label": 0,
+      "sha256": "fdea8ffa88f21726d4e42f49eacd131f8e79a054223419e60853e764169ef362",
+      "prediction": 0,
+      "parkinson_score": 0.24890214300450203
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_263.wav",
+      "label": 1,
+      "sha256": "29ff89de93d8b1bccac00677aae3ceb763259387616c21906c07f8ecf0e6f7c1",
+      "prediction": 1,
+      "parkinson_score": 0.6747001335505901
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_092.wav",
+      "label": 1,
+      "sha256": "b5ef62c78bcb696359e4af7cf2e0ce2a02b7756ed446294e86ebe34f3c96b07e",
+      "prediction": 1,
+      "parkinson_score": 0.9300040848464868
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_189.wav",
+      "label": 0,
+      "sha256": "fdf67ae30ffd4b31c7d9d83449d405cab1aff10531a9081e5b5983a77f61756c",
+      "prediction": 0,
+      "parkinson_score": 0.04228939192083603
+    },
+    {
+      "path": "Voice_Dataset/Healthy/healthy_171.wav",
+      "label": 0,
+      "sha256": "554deb31f7d1051c66b1418e9931bdaeaf34c21af7f877fe2dc34af4c43008d0",
+      "prediction": 0,
+      "parkinson_score": 0.1566984494877826
+    },
+    {
+      "path": "Voice_Dataset/Parkinsons/parkinsons_240.wav",
+      "label": 1,
+      "sha256": "b1da7a2b2b23ed6a6b72befd179aceda90b58403ff81a06e84b0f2ab1c94137a",
+      "prediction": 1,
+      "parkinson_score": 0.9787626324345047
+    }
+  ],
+  "model_sha256": "f734ef744b20701d900595340a13fa7377e9da8ae089e4d6f50a397b1261b767",
+  "scaler_sha256": "847bcb242be24864fc177f750c5efb5a7feec70026ed3ba0ed49a3adca384af1"
+}
