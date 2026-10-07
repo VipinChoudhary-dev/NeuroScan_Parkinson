@@ -135,3 +135,26 @@ def test_recording_sample_rate_normalization(tmp_path):
 
 def test_legacy_demo_cannot_feed_22_features_to_193_feature_model():
     assert client.get('/predict/voice/demo/healthy').status_code==410
+
+
+def test_concurrent_analysis_returns_busy_without_running_model(monkeypatch):
+    from threading import Event, Thread
+    acquired, release = Event(), Event()
+    def hold_lock():
+        with main._analysis_lock:
+            acquired.set()
+            release.wait(5)
+    holder = Thread(target=hold_lock)
+    holder.start()
+    assert acquired.wait(2)
+    try:
+        def must_not_run(*args, **kwargs):
+            raise AssertionError('Busy request must not run a model')
+        monkeypatch.setattr(main, 'classify_drawing', must_not_run)
+        response = client.post('/predict/drawing', files={'file': ('image.png', b'data')})
+        assert response.status_code == 503
+        assert response.headers['retry-after'] == '10'
+        assert 'in progress' in response.json()['detail']
+    finally:
+        release.set()
+        holder.join(2)

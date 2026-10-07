@@ -3,6 +3,9 @@ import hashlib
 import io
 import json
 import logging
+from functools import wraps
+from threading import RLock
+import time
 import os
 from pathlib import Path
 import pickle
@@ -112,6 +115,26 @@ def require_model(kind):
     return models[kind]
 
 
+
+# One analysis per worker bounds concurrent tensor/audio allocations. It does not
+# make a single analysis fit into an undersized hosting plan.
+_analysis_lock = RLock()
+
+def single_analysis(function):
+    @wraps(function)
+    def guarded(*args, **kwargs):
+        if not _analysis_lock.acquire(blocking=False):
+            raise HTTPException(503, 'Another analysis is in progress. Please wait and try again.', headers={'Retry-After': '10'})
+        started = time.monotonic()
+        log.info('Analysis started: %s', function.__name__)
+        try:
+            return function(*args, **kwargs)
+        finally:
+            log.info('Analysis finished: %s (%.2fs)', function.__name__, time.monotonic() - started)
+            _analysis_lock.release()
+    return guarded
+
+
 def read_upload(file, limit):
     content = file.file.read(limit + 1)
     if len(content) > limit:
@@ -162,16 +185,19 @@ def classify_drawing(file, kind):
 
 
 @app.post('/predict/drawing')
+@single_analysis
 def predict_drawing(file: UploadFile = File(...)):
     return classify_drawing(file, 'spiral')
 
 
 @app.post('/predict/wave')
+@single_analysis
 def predict_wave(file: UploadFile = File(...)):
     return classify_drawing(file, 'wave')
 
 
 @app.post('/predict/voice')
+@single_analysis
 def predict_voice(file: UploadFile = File(...)):
     model = require_model('voice')
     content = read_upload(file, 25 * 1024 * 1024)
@@ -268,6 +294,7 @@ def demo_sample(kind: Literal['voice', 'spiral', 'wave'], label: Literal['health
 
 
 @app.post('/assessments')
+@single_analysis
 def create_assessment(
     voice: UploadFile | None = File(None),
     spiral: UploadFile | None = File(None),
