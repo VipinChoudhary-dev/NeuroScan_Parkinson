@@ -93,3 +93,23 @@ The software runs real trained classifiers, exposes their evidence and combines 
 The next scientific step requires a verified paired cohort, independent clinical labels, participant-separated evaluation and calibration. More visual polish or a chatbot cannot replace those data.
 
 For technical detail, see `docs/METHODOLOGY.md`; for collecting paired data, see `docs/DATA_COLLECTION.md`. Website model metrics are on `/evidence`.
+
+## 10. Why JavaScript rather than TypeScript?
+
+The existing frontend was built with JavaScript and React JSX, so the improvements kept that working foundation. The machine-learning backend is Python. TypeScript adds checks during development: for example, it can catch passing text where a number was expected before the code runs. It compiles to JavaScript for the browser.
+
+TypeScript is useful as a project grows, but it does not automatically make the interface faster, the models more accurate, or the website more professional. A migration would be a separate code-maintenance change; it is not required for deployment. JavaScript still benefits from linting, runtime input validation and tests, which this project uses.
+
+## 11. How is the chatbot kept focused on medical questions?
+
+Gemini is a general-purpose AI model. We did not train a new medical chatbot or remove its general knowledge. Instead, the Python server includes a **system instruction** with every chat request. Think of it as a job description: explain health, Parkinson’s, movement disorders and this application in simple language; gently redirect unrelated questions. General health questions are allowed, not just Parkinson’s questions.
+
+The instruction also tells it not to diagnose a person, prescribe or change medicines, invent citations, pretend to inspect uploads, or obey requests to ignore these rules. For example, it should explain what tremor means, but redirect a request to write an unrelated game. Questions about how NeuroScan works are allowed too.
+
+**This is guidance, not an unbreakable barrier.** There is no separate topic-classification model or hard keyword filter blocking nonmedical questions before they reach Gemini. The AI can misunderstand a request or fail to follow the instruction. The server checks message format, length, rate limits and response structure; these checks do not prove that every answer is medically correct or on topic. Low response temperature encourages consistency, but does not guarantee it.
+
+Visitors cannot set the system instruction through the chat form: the backend adds it separately from their messages. User text remains user text. This helps resist attempts such as “ignore your instructions,” but it is not a complete protection against prompt injection.
+
+The chatbot has **no access to uploaded images, audio, medical records, model results or live web search**. Only the submitted conversation and recent chat context go to Google. The backend accepts reading-link IDs only from a small approved list; this prevents arbitrary links from being displayed, but those links are further reading, not proof that every sentence was checked against a source.
+
+The chatbot is an educational helper. Its topic boundaries, medical restrictions and privacy notice are separate from the three prediction pipelines and the two score-combination formulas.
