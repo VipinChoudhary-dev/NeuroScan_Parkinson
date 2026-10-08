@@ -10,7 +10,7 @@ export default function NeuralOrb({ paused = false, mode = 'spiral', energy = .6
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-    let width = 500, height = 500, frame = 0, last = 0, elapsed = .7;
+    let width = 500, height = 500, frame = 0, timer = 0, last = 0, elapsed = .7, lastState = '';
     let visible = false, angle = .15, tilt = -.28, targetAngle = .15, targetTilt = -.28;
     let boost = 0, previousPulse = 0, down = null, dragDistance = 0, lastMode = 'spiral', blend = 1, fromMode = 'spiral';
     let strands = 22, steps = 92;
@@ -85,13 +85,19 @@ export default function NeuralOrb({ paused = false, mode = 'spiral', energy = .6
       const animated = !current.paused && !reduced.matches;
       if (!last || now - last >= 32) {
         if (animated) { elapsed += dt; if (!down) targetAngle += dt * (.075 + current.energy * .085); blend = Math.min(1, blend + dt * 1.5); boost = Math.max(0, boost - dt * .65); }
-        angle += (targetAngle - angle) * .13; tilt += (targetTilt - tilt) * .13;
-        draw(); last = now;
+        const state = `${current.mode}/${current.energy}/${current.pulse}/${boost}/${targetAngle}/${targetTilt}`;
+        if (animated || state !== lastState || Math.abs(targetAngle - angle) > .001 || Math.abs(targetTilt - tilt) > .001) {
+          if (!animated) blend = 1;
+          angle += (targetAngle - angle) * .13; tilt += (targetTilt - tilt) * .13;
+          draw(); lastState = state;
+        }
+        last = now;
       }
       // Low-frequency checks while paused allow mode/energy controls to remain usable.
-      frame = animated ? requestAnimationFrame(tick) : setTimeout(() => tick(performance.now()), 100);
+      if (animated) frame = requestAnimationFrame(tick);
+      else timer = setTimeout(() => tick(performance.now()), 100);
     };
-    const stop = () => { cancelAnimationFrame(frame); clearTimeout(frame); };
+    const stop = () => { cancelAnimationFrame(frame); clearTimeout(timer); };
     const start = () => { stop(); last = 0; if (visible && !document.hidden) frame = requestAnimationFrame(tick); };
     const resize = () => {
       const box = canvas.getBoundingClientRect(); width = box.width; height = box.height;
