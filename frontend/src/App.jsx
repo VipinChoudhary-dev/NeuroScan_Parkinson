@@ -10,7 +10,6 @@ import About from './pages/About';
 import Assessment from './pages/Assessment';
 import Evidence from './pages/Evidence';
 import ClinicalContext from './pages/ClinicalContext';
-import ModelStatus from './components/ModelStatus';
 import Assistant from './pages/Assistant';
 import SiteFooter from './components/SiteFooter';
 import { Sparkles } from 'lucide-react';
@@ -51,7 +50,6 @@ function App() {
     <Router>
       <MotionConfig reducedMotion="user">
         <Navbar />
-        <ModelStatus />
         <main>
           <AnimatedRoutes />
         </main>

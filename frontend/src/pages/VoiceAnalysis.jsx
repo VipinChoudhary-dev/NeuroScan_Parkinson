@@ -1,3 +1,4 @@
+import ModelStatus from '../components/ModelStatus';
 import { useState, useRef, useEffect } from 'react';
 import { Upload, Loader, Trash2, Mic, Square } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
@@ -120,6 +121,7 @@ const VoiceAnalysis = () => {
         </div>
 
         <div className="tool-workspace">
+          <ModelStatus />
           <div className="glass-card" style={{ width: '100%', maxWidth: 520 }}>
 
             {/* Tab: Record Mic */}

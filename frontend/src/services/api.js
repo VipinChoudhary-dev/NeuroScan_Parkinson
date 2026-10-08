@@ -39,7 +39,7 @@ function upload(path, file, filename) {
 export const predictVoice = (file, filename) => upload('/predict/voice', file, filename);
 export const predictDrawing = file => upload('/predict/drawing', file);
 export const predictWave = file => upload('/predict/wave', file);
-export const healthCheck = () => request('/health');
+export const healthCheck = signal => request('/health', { signal, timeoutMs: 15000 });
 export const modelInfo = () => request('/models');
 
 export const fetchEvidence = () => request('/evidence');

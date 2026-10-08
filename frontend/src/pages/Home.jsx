@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, AudioLines, Fingerprint, Waves, ScanLine, Sparkles, ShieldCheck, Pause, Play, Plus, MoveDown } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, AudioLines, Fingerprint, Waves, ScanLine, Sparkles, ShieldCheck, Plus, MoveDown } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
-import NeuralOrb from '../components/NeuralOrb';
+import SignalExperience from '../components/SignalExperience';
 import BrainArtwork from '../components/BrainArtwork';
 const tests = [
   { number: '01', title: 'Voice', subtitle: 'Listen beyond the surface.', copy: 'Explore acoustic patterns in a short recording, with 193 extracted features and a trained voting ensemble.', route: '/voice', Icon: AudioLines, art: 'voice' },
@@ -17,20 +17,35 @@ const faqs = [
 ];
 export default function Home() {
   const [paused, setPaused] = useState(false);
-  return <PageTransition><div className="premium-home">
+  const homeRef = useRef(null);
+  useEffect(() => {
+    const home = homeRef.current;
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { entry.target.dataset.motionVisible = String(entry.isIntersecting); }));
+    home.querySelectorAll('section').forEach(section => observer.observe(section));
+    const visibility = () => home.classList.toggle('page-hidden', document.hidden);
+    document.addEventListener('visibilitychange', visibility); visibility();
+    return () => { observer.disconnect(); document.removeEventListener('visibilitychange', visibility); };
+  }, []);
+  const illuminate = event => {
+    if (event.pointerType !== 'mouse') return;
+    const box = event.currentTarget.getBoundingClientRect();
+    event.currentTarget.style.setProperty('--light-x', `${event.clientX - box.left}px`);
+    event.currentTarget.style.setProperty('--light-y', `${event.clientY - box.top}px`);
+  };
+  return <PageTransition><div ref={homeRef} className={`premium-home living-home ${paused ? 'home-paused' : ''}`}>
     <section className="p-hero">
-      <div className="hero-grid-line" aria-hidden="true" />
+      <div className="hero-grid-line" aria-hidden="true" /><div className="hero-aurora" aria-hidden="true" /><div className="hero-light-path" aria-hidden="true"><i /><i /><i /></div>
       <div className="p-hero-copy"><span className="p-kicker"><span className="status-dot" /> MULTIMODAL PARKINSON’S RESEARCH</span>
         <h1>A clearer view.<br />Of <em>every signal.</em></h1>
         <p>Voice. Movement. Perspective.<br />Explore three independent models in one thoughtful workspace, with evidence you can actually inspect.</p>
         <div className="p-actions"><Link to="/assessment" className="p-button primary">Begin assessment <ArrowUpRight size={19} /></Link><Link to="/evidence" className="p-button ghost">Explore the evidence <ArrowRight size={17} /></Link></div>
         <div className="hero-footnote"><ShieldCheck size={15} /> Built for research. Designed for human review.</div>
       </div>
-      <div className="p-hero-art"><NeuralOrb paused={paused} /><div className="orb-coordinate top">NEURAL FIELD / 001<span>THREE INPUTS. A SHARED VIEW.</span></div><div className="orb-label label-voice"><AudioLines size={15} /> VOICE</div><div className="orb-label label-spiral"><Fingerprint size={15} /> SPIRAL</div><div className="orb-label label-wave"><Waves size={15} /> WAVE</div><div className="orb-bottom"><span>ABSTRACT SIGNAL VISUALIZATION</span><button type="button" onClick={() => setPaused(!paused)} aria-label={paused ? 'Play visual animation' : 'Pause visual animation'}>{paused ? <Play size={14} /> : <Pause size={14} />}</button></div></div>
+      <div className="p-hero-art"><SignalExperience paused={paused} onPause={() => setPaused(value => !value)} /></div>
       <div className="p-hero-bottom"><span>UNDERSTAND THE SIGNAL. RESPECT THE UNCERTAINTY.</span><a href="#perspectives" aria-label="Explore the three perspectives"><MoveDown size={18} /></a></div>
     </section>
     <section className="p-strip"><div><strong>03</strong><span>Independent classifiers</span></div><div><strong>02</strong><span>Transparent fusion methods</span></div><div><strong>01</strong><span>Connected research workspace</span></div><p>No hidden clinical claims.<br /><Link to="/evidence">See methods & limitations <ArrowUpRight size={13} /></Link></p></section>
-    <section className="p-section" id="perspectives"><div className="p-section-head"><div><span className="p-kicker">01 / THE PERSPECTIVES</span><h2>Different signals.<br /><span>A fuller conversation.</span></h2></div><p>Each test has its own model.<br />Each result keeps its context.</p></div><div className="p-test-grid">{tests.map(({ number, title, subtitle, copy, route, Icon, art }) => <Link to={route} className="p-test-card" key={title}><div className="p-card-top"><span>{number} / {title.toUpperCase()}</span><ArrowUpRight size={21} /></div><div className={`signal-art ${art}`} aria-hidden="true">{art === 'voice' ? Array.from({ length: 37 }, (_, i) => <i key={i} style={{ '--bar': `${12 + Math.abs(Math.sin(i * .82) * Math.sin(i * .17)) * 84}%`, '--delay': `${i * .04}s` }} />) : art === 'spiral' ? <svg viewBox="0 0 240 140"><path d="M120 72c-3-12 16-14 20-1 6 22-30 34-43 9-21-40 45-68 70-25 34 60-59 110-105 47C9 28 135-37 195 40c69 88-71 159-139 93" /></svg> : <svg viewBox="0 0 240 140"><path d="M0 74C20 74 12 20 32 20s12 100 32 100 12-100 32-100 12 100 32 100 12-100 32-100 12 100 32 100 12-100 32-100 12 54 32 54" /></svg>}</div><Icon size={23} /><h3>{subtitle}</h3><p>{copy}</p><span className="p-card-link">Explore {title.toLowerCase()} analysis <ArrowRight size={15} /></span></Link>)}</div></section>
+    <section className="p-section" id="perspectives"><div className="p-section-head"><div><span className="p-kicker">01 / THE PERSPECTIVES</span><h2>Different signals.<br /><span>A fuller conversation.</span></h2></div><p>Each test has its own model.<br />Each result keeps its context.</p></div><div className="p-test-grid">{tests.map(({ number, title, subtitle, copy, route, Icon, art }) => <Link to={route} className="p-test-card" key={title} onPointerMove={illuminate}><div className="p-card-top"><span>{number} / {title.toUpperCase()}</span><ArrowUpRight size={21} /></div><div className={`signal-art ${art}`} aria-hidden="true">{art === 'voice' ? Array.from({ length: 37 }, (_, i) => <i key={i} style={{ '--bar': `${12 + Math.abs(Math.sin(i * .82) * Math.sin(i * .17)) * 84}%`, '--delay': `${i * .04}s` }} />) : art === 'spiral' ? <svg viewBox="0 0 240 140"><path d="M120 72c-3-12 16-14 20-1 6 22-30 34-43 9-21-40 45-68 70-25 34 60-59 110-105 47C9 28 135-37 195 40c69 88-71 159-139 93" /></svg> : <svg viewBox="0 0 240 140"><path d="M0 74C20 74 12 20 32 20s12 100 32 100 12-100 32-100 12 100 32 100 12-100 32-100 12 100 32 100 12-100 32-100 12 54 32 54" /></svg>}</div><Icon size={23} /><h3>{subtitle}</h3><p>{copy}</p><span className="p-card-link">Explore {title.toLowerCase()} analysis <ArrowRight size={15} /></span></Link>)}</div></section>
     <section className="p-section brain-feature" aria-labelledby="brain-feature-title">
       <BrainArtwork />
       <div className="brain-feature-copy"><span className="p-kicker">BEHIND EVERY SIGNAL, A PERSON</span><h2 id="brain-feature-title">Patterns are a start.<br /><em>Context matters.</em></h2><p>A voice recording or a drawing captures one small part of a much bigger picture. NeuroScan brings those observations into view while keeping their limits visible.</p><div className="brain-review-note"><ShieldCheck size={21} /><div><h3>Designed for thoughtful review.</h3><p>Explore the model evidence, understand overlapping symptoms, and prepare better questions for a qualified clinician.</p></div></div><Link to="/clinical-context" className="p-button ghost">Explore clinical context <ArrowUpRight size={17} /></Link></div>

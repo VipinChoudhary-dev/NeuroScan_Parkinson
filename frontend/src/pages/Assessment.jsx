@@ -1,3 +1,4 @@
+import ModelStatus from '../components/ModelStatus';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Activity, Mic, PenTool, Upload, Download, Printer, RotateCcw, FlaskConical, ArrowRight, Check, X, Loader, SlidersHorizontal } from 'lucide-react';
@@ -87,6 +88,7 @@ export default function Assessment() {
       <div className="research-badge"><SlidersHorizontal size={21} /><strong>Experimental fusion</strong><span>Human review stays central</span><Link to="/evidence">See evidence & limits <ArrowRight size={14} /></Link></div>
     </header>
     <div className="session-notice no-print">The models were trained on separate datasets. Fusion can compare tests collected from the same person now, but its accuracy is unvalidated. These indices are not disease probabilities.</div>
+    <ModelStatus />
     <form onSubmit={submit} className="no-print">
       <fieldset disabled={loading} className="assessment-fieldset">
         <section className="session-panel">

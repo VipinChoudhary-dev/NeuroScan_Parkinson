@@ -1,78 +1,128 @@
 import { useEffect, useRef } from 'react';
 
-// A projected 3D point cloud: no WebGL dependency or GPU-heavy postprocessing.
-export default function NeuralOrb({ paused = false }) {
+// A small Canvas 2D renderer: full-float decorative geometry, no model/API calls.
+export default function NeuralOrb({ paused = false, mode = 'spiral', energy = .6, pulse = 0 }) {
   const canvasRef = useRef(null);
-  const phase = useRef(.4);
+  const settings = useRef({ paused, mode, energy, pulse });
+  useEffect(() => { settings.current = { paused, mode, energy, pulse }; }, [paused, mode, energy, pulse]);
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const n = window.innerWidth < 700 ? 160 : 300;
-    const points = Array.from({ length: n }, (_, i) => {
-      const y = 1 - 2 * (i + .5) / n, theta = i * 2.39996323;
-      const ring = Math.sqrt(1 - y * y), ripple = 1 + .075 * Math.sin(theta * 5) * Math.sin(y * 8);
-      return { x: Math.cos(theta) * ring * ripple, y: y * 1.08, z: Math.sin(theta) * ring * ripple };
-    });
-    const edges = [];
-    points.forEach((a, i) => points.slice(i + 1).forEach((b, offset) => {
-      const distance = Math.hypot(a.x - b.x, a.y - b.y, a.z - b.z);
-      if (distance < .32) edges.push([i, i + offset + 1]);
-    }));
-    let frame, angle = phase.current, last = 0, visible = true, width = 500, height = 500;
-    const pointer = { x: 0, y: 0 };
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    let width = 500, height = 500, frame = 0, last = 0, elapsed = .7;
+    let visible = false, angle = .15, tilt = -.28, targetAngle = .15, targetTilt = -.28;
+    let boost = 0, previousPulse = 0, down = null, dragDistance = 0, lastMode = 'spiral', blend = 1, fromMode = 'spiral';
+    let strands = 22, steps = 92;
+    const point = (kind, u, v, t) => {
+      if (kind === 'spiral') {
+        const q = u * Math.PI * 2, r = .64 + .23 * Math.cos(3 * q + v * .24);
+        return [r * Math.cos(2 * q) + .06 * Math.cos(v), r * Math.sin(2 * q) + .06 * Math.sin(v), .31 * Math.sin(3 * q + v * .24) + .07 * Math.cos(v)];
+      }
+      if (kind === 'voice') {
+        const a = u * Math.PI * 2, r = .66 + .09 * Math.sin(a * 8 + t * 1.5 + v) + .06 * Math.sin(v);
+        return [r * Math.cos(a), r * Math.sin(a), .22 * Math.cos(v) + .13 * Math.sin(a * 6 - t * 1.2 + v)];
+      }
+      const x = (u - .5) * 1.8;
+      return [x, .25 * Math.sin(u * Math.PI * 4 + t * 1.4 + v * .35) + .22 * Math.sin(v), .32 * Math.cos(v) + .09 * Math.sin(u * 12 - t)];
+    };
+    const project = ([x, y, z]) => {
+      const x1 = x * Math.cos(angle) + z * Math.sin(angle), z1 = -x * Math.sin(angle) + z * Math.cos(angle);
+      const y1 = y * Math.cos(tilt) - z1 * Math.sin(tilt), depth = y * Math.sin(tilt) + z1 * Math.cos(tilt);
+      const scale = 3.5 / (3.5 - depth), radius = Math.min(width, height) * .43;
+      return [width / 2 + x1 * radius * scale, height * .46 + y1 * radius * scale, depth];
+    };
     const draw = () => {
+      const { mode: next, energy: power } = settings.current;
+      if (next !== lastMode) { fromMode = lastMode; lastMode = next; blend = reduced.matches || settings.current.paused ? 1 : 0; }
       ctx.clearRect(0, 0, width, height);
-      const radius = Math.min(width, height) * .31;
-      const cx = width / 2, cy = height / 2;
-      const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius * 1.7);
-      glow.addColorStop(0, 'rgba(150,78,255,.32)'); glow.addColorStop(.6, 'rgba(126,60,216,.14)'); glow.addColorStop(1, 'rgba(0,0,0,0)');
+      const radius = Math.min(width, height) * .43, cx = width / 2, cy = height * .46;
+      const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius * 1.3);
+      glow.addColorStop(0, `rgba(143,63,255,${.15 + power * .12 + boost * .08})`); glow.addColorStop(.55, 'rgba(103,36,199,.07)'); glow.addColorStop(1, 'rgba(103,36,199,0)');
       ctx.fillStyle = glow; ctx.fillRect(0, 0, width, height);
-      const a = angle + pointer.x * .1, ca = Math.cos(a), sa = Math.sin(a), tilt = -.2 + pointer.y * .08;
-      const projected = points.map(p => {
-        const x = p.x * ca + p.z * sa, z = -p.x * sa + p.z * ca;
-        const y = p.y * Math.cos(tilt) - z * Math.sin(tilt), depth = p.y * Math.sin(tilt) + z * Math.cos(tilt);
-        const scale = 3.8 / (3.8 - depth);
-        return { x: cx + x * radius * scale, y: cy + y * radius * scale, z: depth, scale };
+      // Subtle elliptical guides and travelling light keep the volume legible.
+      for (let i = 0; i < 2; i++) {
+        ctx.save(); ctx.translate(cx, cy); ctx.rotate(-.4 + i * 1.2);
+        ctx.lineWidth = .6; ctx.strokeStyle = 'rgba(189,143,255,.18)'; ctx.beginPath(); ctx.ellipse(0, 0, radius * 1.08, radius * .68, 0, 0, Math.PI * 2); ctx.stroke();
+        const t = elapsed * .18 + i * 2.2;
+        ctx.fillStyle = '#eedbff'; ctx.shadowColor = '#b785ff'; ctx.shadowBlur = 12;
+        ctx.beginPath(); ctx.arc(Math.cos(t) * radius * 1.08, Math.sin(t) * radius * .68, 2, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+      }
+      const curves = [];
+      for (let j = 0; j < strands; j++) {
+        const v = j / strands * Math.PI * 2, points = [];
+        for (let i = 0; i <= steps; i++) {
+          const u = i / steps, b = point(next, u, v, elapsed), a = blend < 1 ? point(fromMode, u, v, elapsed) : b;
+          const k = blend * blend * (3 - 2 * blend);
+          points.push(project(a.map((value, axis) => value + (b[axis] - value) * k)));
+        }
+        curves.push({ points, j, depth: points.reduce((sum, p) => sum + p[2], 0) / points.length });
+      }
+      curves.sort((a, b) => a.depth - b.depth);
+      ctx.globalCompositeOperation = 'lighter';
+      curves.forEach(({ points, j, depth }) => {
+        const light = Math.max(.18, Math.min(.85, .42 + depth * .48 + power * .2));
+        ctx.lineWidth = j % 5 === 0 ? 1.3 : .65;
+        ctx.strokeStyle = `rgba(${j % 5 === 0 ? '233,205,255' : '160,94,255'},${light})`;
+        ctx.shadowBlur = j % 5 === 0 ? 9 + power * 4 : 0; ctx.shadowColor = '#9a4cff';
+        ctx.beginPath(); points.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.stroke();
+        // A short, bright pulse travels along each filament.
+        const head = Math.floor(((elapsed * (.05 + power * .035) + j / strands) % 1) * steps);
+        ctx.shadowBlur = 10; ctx.strokeStyle = `rgba(245,227,255,${.55 + boost * .35})`; ctx.lineWidth = 1.6;
+        ctx.beginPath(); for (let k = Math.max(0, head - 3); k <= head; k++) { const [x, y] = points[k]; if (k === Math.max(0, head - 3)) ctx.moveTo(x, y); else ctx.lineTo(x, y); } ctx.stroke();
       });
-      ctx.lineWidth = .9;
-      edges.forEach(([i, j]) => {
-        const p = projected[i], q = projected[j], opacity = .16 + Math.min(1, Math.max(0, (p.z + q.z + 2) / 4)) * .5;
-        ctx.strokeStyle = `rgba(196,153,255,${opacity})`; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
-      });
-      projected.sort((a, b) => a.z - b.z).forEach((p, i) => {
-        ctx.beginPath(); ctx.arc(p.x, p.y, (i % 13 === 0 ? 2.6 : 1.3) * p.scale, 0, Math.PI * 2);
-        ctx.fillStyle = p.z > .5 ? 'rgba(251,240,255,1)' : `rgba(193,143,255,${Math.min(1, .4 + (p.z + 1) * .3)})`; ctx.fill();
-      });
-      // Orbital paths sit in tilted planes around the cloud.
-      for (let j = 0; j < 3; j++) {
-        ctx.save(); ctx.translate(cx, cy); ctx.rotate(-.35 + j * 1.05);
-        ctx.strokeStyle = `rgba(189,150,250,${j === 0 ? .65 : .3})`; ctx.lineWidth = .85;
-        ctx.beginPath(); ctx.ellipse(0, 0, radius * 1.48, radius * (.36 + .1 * j), 0, 0, 2 * Math.PI); ctx.stroke();
-        const t = angle * (j + 1) * .7;
-        ctx.beginPath(); ctx.arc(Math.cos(t) * radius * 1.48, Math.sin(t) * radius * (.36 + .1 * j), 2.8, 0, Math.PI * 2); ctx.fillStyle = '#dcc6ff'; ctx.fill(); ctx.restore();
+      ctx.shadowBlur = 0; ctx.globalCompositeOperation = 'source-over';
+      if (boost > .01) {
+        ctx.strokeStyle = `rgba(223,183,255,${boost * .65})`; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.ellipse(cx, cy, radius * (1.15 - boost * .3), radius * (.8 - boost * .2), -.2, 0, Math.PI * 2); ctx.stroke();
       }
     };
     const tick = now => {
-      if (now - last > 33) { angle += .003; phase.current = angle; draw(); last = now; }
-      frame = requestAnimationFrame(tick);
+      const current = settings.current;
+      const changed = current.pulse !== previousPulse;
+      if (changed) { boost = 1; previousPulse = current.pulse; }
+      const dt = last ? Math.min((now - last) / 1000, .05) : .033;
+      const animated = !current.paused && !reduced.matches;
+      if (!last || now - last >= 32) {
+        if (animated) { elapsed += dt; if (!down) targetAngle += dt * (.075 + current.energy * .085); blend = Math.min(1, blend + dt * 1.5); boost = Math.max(0, boost - dt * .65); }
+        angle += (targetAngle - angle) * .13; tilt += (targetTilt - tilt) * .13;
+        draw(); last = now;
+      }
+      // Low-frequency checks while paused allow mode/energy controls to remain usable.
+      frame = animated ? requestAnimationFrame(tick) : setTimeout(() => tick(performance.now()), 100);
     };
-    const start = () => {
-      cancelAnimationFrame(frame); draw();
-      if (!paused && !reduced.matches && visible && !document.hidden) frame = requestAnimationFrame(tick);
-    };
+    const stop = () => { cancelAnimationFrame(frame); clearTimeout(frame); };
+    const start = () => { stop(); last = 0; if (visible && !document.hidden) frame = requestAnimationFrame(tick); };
     const resize = () => {
-      const rect = canvas.getBoundingClientRect(); width = rect.width; height = rect.height;
-      const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
-      canvas.width = width * ratio; canvas.height = height * ratio; ctx.setTransform(ratio, 0, 0, ratio, 0, 0); draw();
+      const box = canvas.getBoundingClientRect(); width = box.width; height = box.height;
+      strands = width < 420 ? 14 : 22; steps = width < 420 ? 70 : 92;
+      const dpr = Math.min(devicePixelRatio || 1, 1.5); canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); draw();
+    };
+    const pointerDown = event => { down = { x: event.clientX, y: event.clientY, type: event.pointerType }; dragDistance = 0; if (event.pointerType === 'mouse') canvas.setPointerCapture(event.pointerId); };
+    const move = event => {
+      if (!down) return;
+      const dx = event.clientX - down.x, dy = event.clientY - down.y;
+      dragDistance += Math.abs(dx) + Math.abs(dy);
+      targetAngle += dx * .008; if (down.type === 'mouse') targetTilt = Math.max(-.85, Math.min(.85, targetTilt + dy * .005));
+      down.x = event.clientX; down.y = event.clientY;
+    };
+    const end = () => { if (down && dragDistance < 12) boost = 1; down = null; };
+    const cancel = () => { down = null; };
+    const key = event => {
+      if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Enter', ' '].includes(event.key)) {
+        event.preventDefault();
+        if (event.key === 'ArrowLeft') targetAngle -= .3;
+        else if (event.key === 'ArrowRight') targetAngle += .3;
+        else if (event.key === 'ArrowUp') targetTilt = Math.max(-.85, targetTilt - .2);
+        else if (event.key === 'ArrowDown') targetTilt = Math.min(.85, targetTilt + .2);
+        else boost = 1;
+      }
     };
     const observer = new ResizeObserver(resize); observer.observe(canvas);
     const intersection = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; start(); }); intersection.observe(canvas);
-    const move = event => { const rect = canvas.getBoundingClientRect(); pointer.x = (event.clientX - rect.left) / rect.width - .5; pointer.y = (event.clientY - rect.top) / rect.height - .5; };
-    canvas.addEventListener('pointermove', move); document.addEventListener('visibilitychange', start); reduced.addEventListener('change', start);
-    resize(); start();
-    return () => { cancelAnimationFrame(frame); observer.disconnect(); intersection.disconnect(); canvas.removeEventListener('pointermove', move); document.removeEventListener('visibilitychange', start); reduced.removeEventListener('change', start); };
-  }, [paused]);
-  return <canvas ref={canvasRef} className="neural-orb" aria-hidden="true" />;
+    canvas.addEventListener('pointerdown', pointerDown); canvas.addEventListener('pointermove', move); canvas.addEventListener('pointerup', end); canvas.addEventListener('pointercancel', cancel); canvas.addEventListener('pointerleave', cancel); canvas.addEventListener('keydown', key);
+    document.addEventListener('visibilitychange', start); reduced.addEventListener('change', start); resize();
+    return () => { stop(); observer.disconnect(); intersection.disconnect(); document.removeEventListener('visibilitychange', start); reduced.removeEventListener('change', start); canvas.removeEventListener('pointerdown', pointerDown); canvas.removeEventListener('pointermove', move); canvas.removeEventListener('pointerup', end); canvas.removeEventListener('pointercancel', cancel); canvas.removeEventListener('pointerleave', cancel); canvas.removeEventListener('keydown', key); };
+  }, []);
+  return <canvas ref={canvasRef} className="neural-orb" role="button" tabIndex={0} aria-label="Interactive signal sculpture. Drag or use arrow keys to rotate. Tap or press Enter to illuminate." />;
 }

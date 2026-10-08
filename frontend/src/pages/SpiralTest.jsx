@@ -1,3 +1,4 @@
+import ModelStatus from '../components/ModelStatus';
 import { useState, useRef, useEffect } from 'react';
 import { Upload, Send, Loader, Trash2 } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
@@ -64,6 +65,7 @@ const SpiralTest = () => {
           </div>
         </div>
         <div className="tool-workspace">
+          <ModelStatus />
           <div className="glass-card" style={{ width: '100%', maxWidth: 500 }}>
             <div className="upload-zone"
               onClick={() => !isLoading && !preview && inputRef.current?.click()}
