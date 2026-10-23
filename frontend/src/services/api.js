@@ -1,3 +1,5 @@
+import { IS_PUBLIC_PREVIEW, PUBLIC_ANALYSIS_MESSAGE } from '../config/deployment';
+
 const API_BASE = (import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:8000' : '/api')).replace(/\/$/, '');
 
 // Bound both response headers and body reads. Never retry an analysis POST automatically.
@@ -36,14 +38,16 @@ function upload(path, file, filename) {
   return request(path, { method: 'POST', body: form });
 }
 
-export const predictVoice = (file, filename) => upload('/predict/voice', file, filename);
-export const predictDrawing = file => upload('/predict/drawing', file);
-export const predictWave = file => upload('/predict/wave', file);
+const publicAnalysisUnavailable = () => Promise.reject(new Error(PUBLIC_ANALYSIS_MESSAGE));
+
+export const predictVoice = (file, filename) => IS_PUBLIC_PREVIEW ? publicAnalysisUnavailable() : upload('/predict/voice', file, filename);
+export const predictDrawing = file => IS_PUBLIC_PREVIEW ? publicAnalysisUnavailable() : upload('/predict/drawing', file);
+export const predictWave = file => IS_PUBLIC_PREVIEW ? publicAnalysisUnavailable() : upload('/predict/wave', file);
 export const healthCheck = signal => request('/health', { signal, timeoutMs: 15000 });
 export const modelInfo = () => request('/models');
 
 export const fetchEvidence = () => request('/evidence');
-export const createAssessment = form => request('/assessments', { method: 'POST', body: form });
+export const createAssessment = form => IS_PUBLIC_PREVIEW ? publicAnalysisUnavailable() : request('/assessments', { method: 'POST', body: form });
 export async function fetchDemoSample(kind, label = 'healthy', number = 1) {
   let blob;
   try {

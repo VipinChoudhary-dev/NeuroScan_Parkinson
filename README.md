@@ -7,6 +7,10 @@
 
 Built by **Vipin Choudhary** · React + FastAPI + TensorFlow + scikit-learn
 
+# [🌐 VISIT & EXPLORE NEUROSCAN AI](https://neuroscanparkinson.vercel.app/)
+
+### [Open the live website →](https://neuroscanparkinson.vercel.app/)
+
 [Quick start](#quick-start) · [Models](#the-models) · [Deployment](#deployment) · [Model guide](docs/MODEL_GUIDE.md)
 
 </div>

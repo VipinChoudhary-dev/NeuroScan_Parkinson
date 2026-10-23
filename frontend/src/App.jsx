@@ -12,6 +12,7 @@ import Evidence from './pages/Evidence';
 import ClinicalContext from './pages/ClinicalContext';
 import Assistant from './pages/Assistant';
 import SiteFooter from './components/SiteFooter';
+import PublicHostingNotice from './components/PublicHostingNotice';
 import { Sparkles } from 'lucide-react';
 import './premium.css';
 
@@ -50,6 +51,7 @@ function App() {
     <Router>
       <MotionConfig reducedMotion="user">
         <Navbar />
+        <PublicHostingNotice />
         <main>
           <AnimatedRoutes />
         </main>
